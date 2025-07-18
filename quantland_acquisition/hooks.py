@@ -1,5 +1,5 @@
 app_name = "quantland_acquisition"
-app_title = "Quantland Acquisition"
+app_title = "QuantLand Acquisition"
 app_publisher = "Quantbit Tech"
 app_description = "QuantLand Acquisition"
 app_email = "contact@quantbit.io"
@@ -15,7 +15,7 @@ app_license = "mit"
 # 	{
 # 		"name": "quantland_acquisition",
 # 		"logo": "/assets/quantland_acquisition/logo.png",
-# 		"title": "Quantland Acquisition",
+# 		"title": "QuantLand Acquisition",
 # 		"route": "/quantland_acquisition",
 # 		"has_permission": "quantland_acquisition.api.permission.has_app_permission"
 # 	}

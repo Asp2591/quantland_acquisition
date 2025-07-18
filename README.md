@@ -1,4 +1,4 @@
-### Quantland Acquisition
+### QuantLand Acquisition
 
 QuantLand Acquisition
 
