@@ -14,6 +14,7 @@ class CompensationDetails(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+
 		amount: DF.Float
 		description: DF.SmallText | None
 		parent: DF.Data
