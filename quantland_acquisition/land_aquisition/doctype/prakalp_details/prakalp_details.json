@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-23 19:05:30.343569",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "prakalp_details_section",
+  "prakalp_id",
+  "column_break_gcem",
+  "prakalp_name",
+  "column_break_hufg",
+  "area_covered"
+ ],
+ "fields": [
+  {
+   "fieldname": "prakalp_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Prakalp ID",
+   "options": "Prakalp"
+  },
+  {
+   "fieldname": "prakalp_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Prakalp Name",
+   "options": "Prakalp"
+  },
+  {
+   "fieldname": "area_covered",
+   "fieldtype": "Float",
+   "label": "Area Covered"
+  },
+  {
+   "fieldname": "column_break_gcem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hufg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prakalp_details_section",
+   "fieldtype": "Section Break",
+   "label": "Prakalp Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-25 17:18:35.379670",
+ "modified_by": "atharvapatkar@erpdata.in",
+ "module": "Land Aquisition",
+ "name": "Prakalp Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

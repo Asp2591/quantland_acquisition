@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-23 19:20:12.486538",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "primary_details_section",
+  "prakalp_id",
+  "village_id",
+  "column_break_eldn",
+  "prastav_name",
+  "village_name",
+  "land_details_section",
+  "gut_number",
+  "affected_area",
+  "column_break_pgql",
+  "aquisition_type",
+  "total_area",
+  "landholder_details_section",
+  "landholder",
+  "column_break_ewxb",
+  "land_type",
+  "712_section",
+  "712_record"
+ ],
+ "fields": [
+  {
+   "fieldname": "prakalp_id",
+   "fieldtype": "Link",
+   "label": "Prakalp ID",
+   "options": "Prakalp"
+  },
+  {
+   "fetch_from": "prakalp_id.prakalp_name",
+   "fieldname": "prastav_name",
+   "fieldtype": "Data",
+   "label": "Prakalp Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Village ID",
+   "options": "Village"
+  },
+  {
+   "fetch_from": "village_id.village_name",
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gut_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Gut Number"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Float",
+   "label": "Total Area"
+  },
+  {
+   "fieldname": "affected_area",
+   "fieldtype": "Float",
+   "label": "Affected Area"
+  },
+  {
+   "fieldname": "aquisition_type",
+   "fieldtype": "Select",
+   "label": "Aquisition Type"
+  },
+  {
+   "fieldname": "landholder",
+   "fieldtype": "Data",
+   "label": "Landholder"
+  },
+  {
+   "fieldname": "land_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Land Type"
+  },
+  {
+   "fieldname": "712_record",
+   "fieldtype": "Data",
+   "label": "7/12 Record"
+  },
+  {
+   "fieldname": "column_break_eldn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "land_details_section",
+   "fieldtype": "Section Break",
+   "label": "Land Details"
+  },
+  {
+   "fieldname": "column_break_pgql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "landholder_details_section",
+   "fieldtype": "Section Break",
+   "label": "Landholder Details"
+  },
+  {
+   "fieldname": "column_break_ewxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "712_section",
+   "fieldtype": "Section Break",
+   "label": "7/12"
+  },
+  {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Prakalp Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-27 18:13:44.665401",
+ "modified_by": "atharvapatkar@erpdata.in",
+ "module": "Land Aquisition",
+ "name": "Prastav Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

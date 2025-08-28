@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-23 19:07:31.961479",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "water_resource",
+  "total_water_in_cubic_meter",
+  "column_break_jcsb",
+  "type_of_water",
+  "water_reserved_for_agriculture",
+  "column_break_vzbu",
+  "number_of_sources",
+  "water_reserved_for_drinking",
+  "section_break_coga",
+  "source_ownership",
+  "section_break_pxep"
+ ],
+ "fields": [
+  {
+   "fieldname": "water_resource",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Water Resource",
+   "options": "Water Resources"
+  },
+  {
+   "fieldname": "type_of_water",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type of Water",
+   "options": "Fresh\nSalt\nHard Water"
+  },
+  {
+   "fieldname": "number_of_sources",
+   "fieldtype": "Int",
+   "label": "Number of Sources"
+  },
+  {
+   "fieldname": "total_water_in_cubic_meter",
+   "fieldtype": "Float",
+   "label": "Total Water in Cubic Meter"
+  },
+  {
+   "fieldname": "water_reserved_for_agriculture",
+   "fieldtype": "Float",
+   "label": "Water Reserved for Agriculture"
+  },
+  {
+   "fieldname": "water_reserved_for_drinking",
+   "fieldtype": "Float",
+   "label": "Water Reserved for Drinking"
+  },
+  {
+   "fieldname": "source_ownership",
+   "fieldtype": "Select",
+   "label": "Source Ownership",
+   "options": "Private\nGrampanchayat\nDistrict\nState\nOther"
+  },
+  {
+   "fieldname": "column_break_jcsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vzbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_coga",
+   "fieldtype": "Section Break",
+   "label": "Ownership Details"
+  },
+  {
+   "fieldname": "section_break_pxep",
+   "fieldtype": "Section Break",
+   "label": "Water Resources Availability Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-27 19:42:10.903006",
+ "modified_by": "atharvapatkar@erpdata.in",
+ "module": "Land Aquisition",
+ "name": "Water Resource Availability Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

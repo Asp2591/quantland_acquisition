@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:source_id",
+ "creation": "2025-08-26 10:13:57.804772",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_id",
+  "column_break_nebx",
+  "water_source_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_nebx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "water_source_name",
+   "fieldtype": "Data",
+   "label": "Water Source Name"
+  },
+  {
+   "fieldname": "source_id",
+   "fieldtype": "Int",
+   "label": "Source ID",
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-27 19:17:06.732935",
+ "modified_by": "atharvapatkar@erpdata.in",
+ "module": "Land Aquisition",
+ "name": "Water Resources",
+ "naming_rule": "By fieldname",
+ "owner": "atharvapatkar@erpdata.in",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

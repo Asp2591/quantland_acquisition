@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:division_id",
+ "creation": "2025-08-23 18:52:26.171624",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "primary_details_section",
+  "division_id",
+  "yojana_id",
+  "column_break_gwsz",
+  "division_name",
+  "yojana_name",
+  "column_break_enkz",
+  "division_shortform"
+ ],
+ "fields": [
+  {
+   "fieldname": "division_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Division ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "division_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Division Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "division_shortform",
+   "fieldtype": "Data",
+   "label": "Division Shortform"
+  },
+  {
+   "fieldname": "yojana_id",
+   "fieldtype": "Link",
+   "label": "Yojana ID",
+   "options": "Yojana"
+  },
+  {
+   "fetch_from": "yojana_id.yojana_name",
+   "fieldname": "yojana_name",
+   "fieldtype": "Data",
+   "label": "Yojana Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gwsz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_enkz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-27 14:23:40.642158",
+ "modified_by": "atharvapatkar@erpdata.in",
+ "module": "Land Aquisition",
+ "name": "Division",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
