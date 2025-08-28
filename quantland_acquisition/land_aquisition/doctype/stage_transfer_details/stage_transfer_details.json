@@ -98,7 +98,8 @@
    "fieldname": "new_stage",
    "fieldtype": "Link",
    "label": "New Stage",
-   "options": "Stage"
+   "options": "Stage",
+   "unique": 1
   },
   {
    "fieldname": "section_break_wxta",
@@ -114,8 +115,8 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-28 11:46:55.334595",
- "modified_by": "Administrator",
+ "modified": "2025-08-28 12:45:53.102916",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Stage Transfer Details",
  "owner": "atharvapatkar@erpdata.in",

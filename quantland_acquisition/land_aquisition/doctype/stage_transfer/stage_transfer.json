@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-25 14:54:35.687887",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "prastav_id",
+  "prastav_name",
+  "column_break_sluf",
+  "division_id",
+  "division_name",
+  "column_break_aaqa",
+  "yojana_id",
+  "yojana_name",
+  "section_break_bxtc",
+  "date",
+  "section_break_ajbi",
+  "stage_transfer_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "prastav_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Prastav ID",
+   "options": "Prastav"
+  },
+  {
+   "fetch_from": "prastav_id.prastav_name",
+   "fieldname": "prastav_name",
+   "fieldtype": "Data",
+   "label": "Prastav Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sluf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "division_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Division ID",
+   "options": "Division"
+  },
+  {
+   "fetch_from": "division_id.division_name",
+   "fieldname": "division_name",
+   "fieldtype": "Data",
+   "label": "Division Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_aaqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "yojana_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Yojana ID",
+   "options": "Yojana"
+  },
+  {
+   "fetch_from": "yojana_id.yojana_name",
+   "fieldname": "yojana_name",
+   "fieldtype": "Data",
+   "label": "Yojana Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bxtc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_ajbi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "stage_transfer_details",
+   "fieldtype": "Table",
+   "label": "Stage Transfer Details",
+   "options": "Stage Transfer Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-28 13:41:47.727226",
+ "modified_by": "Administrator",
+ "module": "Land Aquisition",
+ "name": "Stage Transfer",
+ "owner": "atharvapatkar@erpdata.in",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

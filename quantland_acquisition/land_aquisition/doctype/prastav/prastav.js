@@ -6,3 +6,8 @@
 
 // 	},
 // });
+frappe.ui.form.on('Prastav', {
+    upload_child_data: function(frm) {
+        // Open file dialog or call server method to read CSV
+    }
+});

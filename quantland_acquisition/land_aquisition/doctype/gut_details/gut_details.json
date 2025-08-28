@@ -27,7 +27,9 @@
   "gut_details_section",
   "gut_number",
   "column_break_csgw",
-  "gut_master_name",
+  "gut_name",
+  "column_break_mtaz",
+  "gut_name_words",
   "column_break_ebos",
   "current_stage",
   "section_break_qbhp",
@@ -165,11 +167,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "gut_master_name",
-   "fieldtype": "Data",
-   "label": "Gut  Name"
-  },
-  {
    "fieldname": "column_break_ebos",
    "fieldtype": "Column Break"
   },
@@ -222,7 +219,7 @@
   },
   {
    "fieldname": "landholder",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Landholder"
   },
   {
@@ -234,13 +231,27 @@
    "fieldname": "record",
    "fieldtype": "Data",
    "label": "7/12 Record"
+  },
+  {
+   "fieldname": "gut_name",
+   "fieldtype": "Data",
+   "label": "Gut  Name"
+  },
+  {
+   "fieldname": "gut_name_words",
+   "fieldtype": "Data",
+   "label": "Gut Name in words"
+  },
+  {
+   "fieldname": "column_break_mtaz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 11:46:47.098578",
- "modified_by": "Administrator",
+ "modified": "2025-08-28 14:06:51.691154",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",

@@ -5,5 +5,11 @@
 from frappe.model.document import Document
 
 
+# class GutDetails(Document):
+# 	pass
 class GutDetails(Document):
-	pass
+    def validate(self):
+        if self.village_id and self.gut_number and self.prastav_id:
+            self.gut_name = f"{self.village_id}-{self.gut_number}-{self.prastav_id}"
+            
+        

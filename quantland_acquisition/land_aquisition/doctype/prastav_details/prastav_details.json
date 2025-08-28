@@ -74,7 +74,8 @@
   {
    "fieldname": "aquisition_type",
    "fieldtype": "Select",
-   "label": "Aquisition Type"
+   "label": "Aquisition Type",
+   "options": "1\n2\n3"
   },
   {
    "fieldname": "landholder",
@@ -130,7 +131,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-27 18:13:44.665401",
+ "modified": "2025-08-28 12:21:44.608623",
  "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Prastav Details",
