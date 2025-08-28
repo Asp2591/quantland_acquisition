@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-27 18:57:50.920775",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "village_id",
+  "village_name",
+  "column_break_sibt",
+  "total_area",
+  "affected_area",
+  "column_break_hicg",
+  "gut_number",
+  "acquisition_type",
+  "section_break_nlgk",
+  "landholder",
+  "column_break_yaeb",
+  "land_type",
+  "column_break_hkuk",
+  "new_stage",
+  "section_break_wxta",
+  "712_record"
+ ],
+ "fields": [
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Village ID",
+   "options": "Village"
+  },
+  {
+   "fetch_from": "village_id.village_name",
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_sibt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Data",
+   "label": "Total Area"
+  },
+  {
+   "fieldname": "affected_area",
+   "fieldtype": "Data",
+   "label": "Affected Area"
+  },
+  {
+   "fieldname": "column_break_hicg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gut_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Gut Number ",
+   "options": "Gut Details"
+  },
+  {
+   "fieldname": "acquisition_type",
+   "fieldtype": "Data",
+   "label": "Acquisition Type"
+  },
+  {
+   "fieldname": "section_break_nlgk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "landholder",
+   "fieldtype": "Data",
+   "label": "Landholder"
+  },
+  {
+   "fieldname": "column_break_yaeb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "land_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Land Type"
+  },
+  {
+   "fieldname": "column_break_hkuk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_stage",
+   "fieldtype": "Link",
+   "label": "New Stage",
+   "options": "Stage"
+  },
+  {
+   "fieldname": "section_break_wxta",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "712_record",
+   "fieldtype": "Data",
+   "label": "7/12 Record"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-28 11:46:55.334595",
+ "modified_by": "Administrator",
+ "module": "Land Aquisition",
+ "name": "Stage Transfer Details",
+ "owner": "atharvapatkar@erpdata.in",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

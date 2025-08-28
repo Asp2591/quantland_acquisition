@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "WSA-.####",
+ "creation": "2025-08-26 10:13:26.700448",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "district_id",
+  "district_name",
+  "column_break_hzbk",
+  "village_id",
+  "gut_number",
+  "section_break_sqmz",
+  "water_availability_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "label": "District ID",
+   "options": "District"
+  },
+  {
+   "fetch_from": "district_id.district_name",
+   "fieldname": "district_name",
+   "fieldtype": "Data",
+   "label": "District Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hzbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "label": "Village ID",
+   "options": "Village"
+  },
+  {
+   "fieldname": "gut_number",
+   "fieldtype": "Link",
+   "label": "Gut Number",
+   "options": "Gut Details"
+  },
+  {
+   "fieldname": "section_break_sqmz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "water_availability_details",
+   "fieldtype": "Table",
+   "label": "Water Availability Details",
+   "options": "Water Resource Availability Details"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-28 11:47:08.912188",
+ "modified_by": "Administrator",
+ "module": "Land Aquisition",
+ "name": "Water Resources Availability",
+ "naming_rule": "Expression (old style)",
+ "owner": "atharvapatkar@erpdata.in",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
