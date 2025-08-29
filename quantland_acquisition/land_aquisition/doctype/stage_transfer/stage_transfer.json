@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "ST-.####",
  "creation": "2025-08-25 14:54:35.687887",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -92,10 +93,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 13:41:47.727226",
- "modified_by": "Administrator",
+ "modified": "2025-08-29 17:26:16.645580",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

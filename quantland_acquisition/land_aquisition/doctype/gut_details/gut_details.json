@@ -260,7 +260,8 @@
   {
    "fieldname": "payment_amount",
    "fieldtype": "Currency",
-   "label": "Payment Amount"
+   "label": "Payment Amount",
+   "precision": "2"
   },
   {
    "fieldname": "payment_remarks",
@@ -314,8 +315,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:40:40.936476",
- "modified_by": "Administrator",
+ "modified": "2025-08-29 17:31:27.460185",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",
@@ -335,6 +336,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "gut_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
