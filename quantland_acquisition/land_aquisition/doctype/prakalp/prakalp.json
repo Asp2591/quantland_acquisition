@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:prakalp_id",
  "creation": "2025-08-23 18:54:19.140317",
@@ -7,15 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "prakalp_id",
-  "column_break_ynal",
   "prakalp_name",
-  "section_break_ilud",
+  "column_break_fqfn",
+  "subdivision_id",
+  "subdivision_name",
+  "column_break_ynal",
   "division_id",
-  "column_break_rtwd",
   "division_name",
-  "section_break_tnzk",
+  "column_break_jxbg",
   "yojana_id",
-  "column_break_ihxi",
   "yojana_name",
   "section_break_jppa",
   "prakalp_details"
@@ -37,14 +38,13 @@
    "reqd": 1
   },
   {
+   "fetch_from": "subdivision_id.subdivision_id",
    "fieldname": "division_id",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
-   "label": "Division ID",
-   "options": "Division"
+   "fieldtype": "Int",
+   "label": "Division ID"
   },
   {
-   "fetch_from": "division_id.division_name",
+   "fetch_from": "subdivision_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
    "label": "Division Name",
@@ -65,23 +65,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "section_break_tnzk",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_ihxi",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_ynal",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_ilud",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_rtwd",
    "fieldtype": "Column Break"
   },
   {
@@ -93,13 +77,34 @@
   {
    "fieldname": "section_break_jppa",
    "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "subdivision_id.subdivision_name",
+   "fieldname": "subdivision_name",
+   "fieldtype": "Data",
+   "label": "Subdivision Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jxbg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fqfn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subdivision_id",
+   "fieldtype": "Link",
+   "label": "Subdivision ID",
+   "options": "Subdivision"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 14:36:29.681233",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 13:54:22.257044",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prakalp",
  "naming_rule": "By fieldname",

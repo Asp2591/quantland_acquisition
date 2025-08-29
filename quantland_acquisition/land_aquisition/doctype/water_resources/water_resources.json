@@ -32,11 +32,11 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "modified": "2025-08-28 12:41:48.538629",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Water Resources",
  "naming_rule": "By fieldname",
- "owner": "atharvapatkar@erpdata.in",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,

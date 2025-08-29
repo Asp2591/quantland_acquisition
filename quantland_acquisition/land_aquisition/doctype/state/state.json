@@ -35,7 +35,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 11:47:51.573691",
+ "modified": "2025-08-29 14:21:15.255688",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "State",
@@ -56,6 +56,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "state_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

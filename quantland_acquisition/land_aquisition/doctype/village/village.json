@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:village_id",
  "creation": "2025-08-23 18:40:59.771909",
@@ -65,8 +66,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 14:18:23.763136",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:27:16.428411",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Village",
  "naming_rule": "By fieldname",
@@ -86,6 +87,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "village_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

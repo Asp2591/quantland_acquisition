@@ -64,7 +64,7 @@
  "module": "Land Aquisition",
  "name": "Water Resources Availability",
  "naming_rule": "Expression (old style)",
- "owner": "atharvapatkar@erpdata.in",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,

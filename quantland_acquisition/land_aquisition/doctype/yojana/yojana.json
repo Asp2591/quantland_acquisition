@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:yojana_id",
+ "autoname": "field:yojana_name",
  "creation": "2025-08-23 18:50:47.169115",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -26,7 +26,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Yojana Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "circle_id",
@@ -49,8 +50,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 14:20:32.654702",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:23:53.822220",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Yojana",
  "naming_rule": "By fieldname",
@@ -70,6 +71,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "circle_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

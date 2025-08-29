@@ -49,8 +49,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 13:52:19.676083",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:15:26.603426",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Circle",
  "naming_rule": "By fieldname",
@@ -70,6 +70,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "circle_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

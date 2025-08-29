@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:district_id",
  "creation": "2025-08-23 18:36:28.010890",
@@ -7,10 +8,13 @@
  "engine": "InnoDB",
  "field_order": [
   "district_id",
-  "region_id",
-  "column_break_ispg",
   "district_name",
-  "region_name"
+  "column_break_ispg",
+  "region_id",
+  "region_name",
+  "column_break_vvyb",
+  "state_id",
+  "state_name"
  ],
  "fields": [
   {
@@ -45,13 +49,29 @@
   {
    "fieldname": "column_break_ispg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vvyb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "region_id.state_id",
+   "fieldname": "state_id",
+   "fieldtype": "Data",
+   "label": "State ID"
+  },
+  {
+   "fetch_from": "region_id.state_name",
+   "fieldname": "state_name",
+   "fieldtype": "Data",
+   "label": "State Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 11:09:30.489610",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:32:18.153921",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "District",
  "naming_rule": "By fieldname",
@@ -71,6 +91,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "district_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

@@ -66,8 +66,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-27 14:23:40.642158",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:24:43.541949",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Division",
  "naming_rule": "By fieldname",
@@ -87,6 +87,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "division_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

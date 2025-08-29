@@ -96,7 +96,7 @@
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
- "owner": "atharvapatkar@erpdata.in",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,

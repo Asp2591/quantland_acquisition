@@ -43,7 +43,18 @@
   "column_break_qjox",
   "landholder",
   "section_break_nhlx",
-  "record"
+  "record",
+  "column_break_dpff",
+  "attachment",
+  "payemnt_details_section",
+  "payment_amount",
+  "purchase_deed",
+  "column_break_cxcu",
+  "payment_remarks",
+  "date",
+  "purchase_deed_date",
+  "remarks_section",
+  "remarks"
  ],
  "fields": [
   {
@@ -58,6 +69,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "village_id.tehsil_id",
    "fieldname": "tehsil_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -69,6 +81,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "tehsil_id.district_id",
    "fieldname": "district",
    "fieldtype": "Link",
    "label": "District ID",
@@ -79,6 +92,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "district.state_id",
    "fieldname": "state_id",
    "fieldtype": "Link",
    "label": "State ID",
@@ -156,10 +170,7 @@
   {
    "fieldname": "gut_number",
    "fieldtype": "Int",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Gut Number",
-   "reqd": 1,
+   "label": "gut_number",
    "unique": 1
   },
   {
@@ -245,17 +256,70 @@
   {
    "fieldname": "column_break_mtaz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_amount",
+   "fieldtype": "Currency",
+   "label": "Payment Amount"
+  },
+  {
+   "fieldname": "payment_remarks",
+   "fieldtype": "Data",
+   "label": "Payment Remarks"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "purchase_deed",
+   "fieldtype": "Data",
+   "label": "Purchase Deed"
+  },
+  {
+   "fieldname": "purchase_deed_date",
+   "fieldtype": "Date",
+   "label": "Purchase Deed Date"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "payemnt_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "column_break_cxcu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_dpff",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 14:06:51.691154",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:40:40.936476",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",
- "owner": "atharvapatkar@erpdata.in",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,

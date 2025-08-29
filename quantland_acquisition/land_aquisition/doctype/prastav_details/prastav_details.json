@@ -23,7 +23,7 @@
   "column_break_ewxb",
   "land_type",
   "712_section",
-  "712_record"
+  "record"
  ],
  "fields": [
   {
@@ -90,11 +90,6 @@
    "label": "Land Type"
   },
   {
-   "fieldname": "712_record",
-   "fieldtype": "Data",
-   "label": "7/12 Record"
-  },
-  {
    "fieldname": "column_break_eldn",
    "fieldtype": "Column Break"
   },
@@ -125,14 +120,19 @@
    "fieldname": "primary_details_section",
    "fieldtype": "Section Break",
    "label": "Prakalp Details"
+  },
+  {
+   "fieldname": "record",
+   "fieldtype": "Data",
+   "label": "7/12 Record"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-28 12:21:44.608623",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 12:51:30.557284",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",
  "owner": "Administrator",

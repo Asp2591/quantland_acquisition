@@ -10,41 +10,48 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        # {"label": "Kalava Number", "fieldname": "kalava_number", "fieldtype": "Data", "width": 150},
+        {"label": "Prastav ID", "fieldname": "prastav_id", "fieldtype": "Link", "options": "Prastav", "width": 150},
         {"label": "Village Name", "fieldname": "village_name", "fieldtype": "Data", "width": 150},
-        # {"label": "Sr. No.", "fieldname": "sr_no", "fieldtype": "Int", "width": 80},
         {"label": "Acquisition Type", "fieldname": "aquisition_type", "fieldtype": "Select", "width": 150},
         {"label": "Gut Number", "fieldname": "gut_number", "fieldtype": "Int", "width": 100},
         {"label": "Affected Area", "fieldname": "affected_area", "fieldtype": "Data", "width": 120},
-        # {"label": "Amount (in Lakhs)", "fieldname": "amount", "fieldtype": "Currency", "width": 150},
-        # {"label": "Payment Approved Ref", "fieldname": "payment_approved_ref", "fieldtype": "Data", "width": 180},
-        # {"label": "Notice Date", "fieldname": "notice_date", "fieldtype": "Date", "width": 120},
-        # {"label": "Document Number", "fieldname": "document_number", "fieldtype": "Int", "width": 120},
-        # {"label": "Doc Submission Date", "fieldname": "doc_submission_date", "fieldtype": "Date", "width": 140},
-        {"label": "7/12 Register", "fieldname": "record", "fieldtype": "Select", "options": "Yes\nNo", "width": 120},
-        # {"label": "Available 7/12", "fieldname": "available_712", "fieldtype": "Select", "options": "Yes\nNo", "width": 120},
-        # {"label": "Remarks", "fieldname": "remarks", "fieldtype": "Data", "width": 200},
+        {"label": "Payment Amount", "fieldname": "payment_amount", "fieldtype": "Currency", "width": 150},
+        {"label": "Payment Remarks", "fieldname": "payment_remarks", "fieldtype": "Data", "width": 180},
+        {"label": "Date", "fieldname": "date", "fieldtype": "Date", "width": 120},
+        {"label": "Purchase Deed", "fieldname": "purchase_deed", "fieldtype": "Data", "width": 150},
+        {"label": "Purchase Deed Date", "fieldname": "purchase_deed_date", "fieldtype": "Date", "width": 150},
+        {"label": "7/12 Record", "fieldname": "record", "fieldtype": "Select", "options": "Yes\nNo", "width": 120},
+        {"label": "Attachment", "fieldname": "attachment", "fieldtype": "Attach", "width": 150},
+        {"label": "Remarks", "fieldname": "remarks", "fieldtype": "Data", "width": 200},
     ]
-
 
 def get_data(filters):
     conditions = ""
     values = {}
 
-    if filters.get("subdivision_id"):
-        conditions += " AND gd.subdivision_id = %(subdivision_id)s"
-        values["subdivision_id"] = filters["subdivision_id"]
+    if filters.get("village_id"):
+        conditions += " AND gd.village_id = %(village_id)s"
+        values["village_id"] = filters["village_id"]
+
 
     query = f"""
         SELECT 
+            gd.prastav_id,
             v.village_name,
             gd.aquisition_type,
             gd.gut_number,
             gd.affected_area,
-            gd.record
+            gd.payment_amount,
+            gd.payment_remarks,
+            gd.date,
+            gd.purchase_deed,
+            gd.purchase_deed_date,
+            gd.record,
+            gd.attachment,
+            gd.remarks
         FROM `tabGut Details` gd
         LEFT JOIN `tabVillage` v
-        ON gd.village_id = v.name
+            ON gd.village_id = v.name
         WHERE 1=1 {conditions}
     """
 

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:tehsil_id",
  "creation": "2025-08-23 18:34:53.673100",
@@ -49,8 +50,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 11:07:53.368482",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:22:56.498138",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Tehsil",
  "naming_rule": "By fieldname",
@@ -70,8 +71,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "tehsil_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "tehsil_name",
  "track_changes": 1
 }

@@ -120,8 +120,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 12:58:25.798184",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-29 14:38:01.313755",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",
  "naming_rule": "By fieldname",
@@ -141,6 +141,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "prastav_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
