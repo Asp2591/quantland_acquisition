@@ -5,10 +5,5 @@
 from frappe.model.document import Document
 
 
-# class GutDetails(Document):
-# 	pass
 class GutDetails(Document):
-    def validate(self):
-        pass
-            
-        
+	pass

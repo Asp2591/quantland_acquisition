@@ -16,7 +16,6 @@
   {
    "fieldname": "subdivision_id",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Subdivision ID",
    "reqd": 1,
    "unique": 1
@@ -35,6 +34,7 @@
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Subdivision Name",
    "reqd": 1
   },
@@ -42,6 +42,8 @@
    "fetch_from": "division_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Division Name",
    "read_only": 1
   }
@@ -49,7 +51,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:25:41.038787",
+ "modified": "2025-08-30 11:39:08.293126",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Subdivision",

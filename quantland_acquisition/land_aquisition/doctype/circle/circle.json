@@ -7,15 +7,18 @@
  "engine": "InnoDB",
  "field_order": [
   "cicle_id",
-  "region_id",
-  "column_break_dpsy",
+  "column_break_ppni",
   "circle_name",
+  "column_break_dpsy",
+  "region_id",
+  "column_break_gbnf",
   "region_name"
  ],
  "fields": [
   {
    "fieldname": "cicle_id",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Cicle ID",
    "reqd": 1,
    "unique": 1
@@ -23,6 +26,8 @@
   {
    "fieldname": "circle_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Circle Name",
    "reqd": 1
   },
@@ -38,18 +43,28 @@
    "fetch_from": "region_id.region_name",
    "fieldname": "region_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Region Name",
    "read_only": 1
   },
   {
    "fieldname": "column_break_dpsy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ppni",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_gbnf",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:15:26.603426",
+ "modified": "2025-08-30 14:44:32.264603",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Circle",

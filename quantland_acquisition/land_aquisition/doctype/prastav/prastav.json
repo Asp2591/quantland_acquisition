@@ -18,7 +18,7 @@
   "column_break_ftvo",
   "yojana_id",
   "yojana_name",
-  "section_break_ykqa",
+  "column_break_yimh",
   "date",
   "section_break_kygo",
   "prastav_details"
@@ -27,7 +27,6 @@
   {
    "fieldname": "prastav_id",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Prastav ID",
    "reqd": 1,
    "unique": 1
@@ -36,6 +35,7 @@
    "fieldname": "prastav_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Prastav Name",
    "reqd": 1
   },
@@ -43,12 +43,15 @@
    "fieldname": "divison_id",
    "fieldtype": "Link",
    "label": "Division ID",
-   "options": "Division"
+   "options": "Division",
+   "reqd": 1
   },
   {
    "fetch_from": "divison_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Division Name",
    "read_only": 1
   },
@@ -56,12 +59,15 @@
    "fieldname": "yojana_id",
    "fieldtype": "Link",
    "label": "Yojana ID",
-   "options": "Yojana"
+   "options": "Yojana",
+   "reqd": 1
   },
   {
    "fetch_from": "yojana_id.yojana_name",
    "fieldname": "yojana_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Yojana Name",
    "read_only": 1
   },
@@ -70,12 +76,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_ykqa",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Date"
   },
   {
@@ -91,12 +94,15 @@
    "fieldname": "subdivision_id",
    "fieldtype": "Link",
    "label": "Subdivision ID",
-   "options": "Subdivision"
+   "options": "Subdivision",
+   "reqd": 1
   },
   {
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Subdivision Name",
    "read_only": 1
   },
@@ -115,12 +121,16 @@
   {
    "fieldname": "column_break_ftvo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yimh",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:38:01.313755",
+ "modified": "2025-08-30 15:35:58.635793",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",

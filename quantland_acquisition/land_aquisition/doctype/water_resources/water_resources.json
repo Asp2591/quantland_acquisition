@@ -18,6 +18,8 @@
   {
    "fieldname": "water_source_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Water Source Name",
    "unique": 1
   },
@@ -31,7 +33,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 12:41:48.538629",
+ "modified": "2025-08-30 15:18:24.768942",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Water Resources",

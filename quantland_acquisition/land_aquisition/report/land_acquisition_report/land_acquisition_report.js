@@ -13,6 +13,12 @@ frappe.query_reports["Land Acquisition Report"] = {
             "label": __("Village ID"),
             "fieldtype": "Link",
             "options": "Village"
+        },
+         {
+            "fieldname": "date",
+            "label": __("Date"),
+            "fieldtype": "Date",
+            
         }
     ]
 };

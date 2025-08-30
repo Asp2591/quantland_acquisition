@@ -2,62 +2,54 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:gut_number",
- "creation": "2025-08-27 18:59:37.048847",
+ "creation": "2025-08-30 12:58:52.210543",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "village_id",
   "village_name",
-  "column_break_trhw",
+  "subdivision_name",
+  "subdivision_id",
+  "column_break_xjhs",
   "tehsil_id",
   "tehsil_name",
-  "column_break_dsmg",
-  "district_id",
-  "district_name",
-  "column_break_rhbd",
-  "state_id",
-  "state_name",
-  "section_break_aetv",
-  "column_break_oyzv",
-  "prastav_id",
-  "prastav_name",
-  "column_break_2bge",
   "division_id",
   "division_name",
-  "column_break_crof",
+  "column_break_qhzp",
+  "district_id",
+  "district_name",
   "yojana_id",
   "yojana_name",
-  "column_break_qnim",
-  "subdivision_id",
-  "subdivision_name",
+  "column_break_hmxk",
+  "state_id",
+  "state_name",
+  "prastav_id",
+  "prastav_name",
   "gut_details_section",
   "column_break_csgw",
-  "gut_name",
-  "column_break_mtaz",
-  "gut_name_words",
-  "column_break_ebos",
-  "current_stage",
   "gut_number",
-  "section_break_qbhp",
-  "total_area",
-  "column_break_xkgz",
-  "affected_area",
-  "column_break_cvtl",
-  "aquisition_type",
-  "section_break_lkwp",
-  "column_break_qjox",
-  "landholder",
-  "section_break_nhlx",
   "land_type",
+  "column_break_mtaz",
+  "gut",
+  "landholder",
+  "column_break_ebos",
+  "gut_name",
+  "current_stage",
+  "column_break_vcsi",
+  "total_area",
   "record",
-  "column_break_dpff",
+  "column_break_zbxl",
+  "affected_area",
   "attachment",
   "payemnt_details_section",
   "payment_amount",
   "column_break_cxcu",
   "payment_remarks",
+  "column_break_buzg",
   "purchase_deed",
+  "column_break_huku",
   "date",
+  "column_break_vkgd",
   "purchase_deed_date",
   "remarks_section",
   "remarks"
@@ -66,80 +58,83 @@
   {
    "fieldname": "village_id",
    "fieldtype": "Link",
-   "in_standard_filter": 1,
    "label": "Village ID",
    "options": "Village"
   },
   {
-   "fieldname": "column_break_trhw",
+   "fetch_from": "village_id.village_name",
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Village Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xjhs",
    "fieldtype": "Column Break"
   },
   {
    "fetch_from": "village_id.tehsil_id",
    "fieldname": "tehsil_id",
    "fieldtype": "Link",
-   "in_standard_filter": 1,
    "label": "Tehsil ID",
    "options": "Tehsil"
   },
   {
-   "fieldname": "column_break_dsmg",
-   "fieldtype": "Column Break"
+   "fetch_from": "village_id.tehsil_name",
+   "fieldname": "tehsil_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tehsil Name",
+   "read_only": 1
   },
   {
-   "fieldname": "column_break_rhbd",
-   "fieldtype": "Column Break"
+   "fetch_from": "tehsil_id.district_id",
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "label": "District ID",
+   "options": "District"
   },
   {
-   "fieldname": "column_break_oyzv",
-   "fieldtype": "Column Break"
+   "fetch_from": "tehsil_id.district_name",
+   "fieldname": "district_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "District Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "district_id.state_id",
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "label": "State ID",
+   "options": "State"
+  },
+  {
+   "fetch_from": "state_id.state_name",
+   "fieldname": "state_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "State Name",
+   "read_only": 1
   },
   {
    "fieldname": "prastav_id",
    "fieldtype": "Link",
-   "in_standard_filter": 1,
    "label": "Prastav ID",
    "options": "Prastav"
   },
   {
-   "fieldname": "section_break_aetv",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "division_id",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
-   "label": "Division ID",
-   "options": "Division"
-  },
-  {
-   "fetch_from": "division_id.division_name",
-   "fieldname": "division_name",
+   "fetch_from": "prastav_id.prastav_name",
+   "fieldname": "prastav_name",
    "fieldtype": "Data",
-   "label": "Division Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_crof",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "yojana_id",
-   "fieldtype": "Link",
    "in_standard_filter": 1,
-   "label": "Yojana ID",
-   "options": "Yojana"
-  },
-  {
-   "fetch_from": "yojana_id.yojana_name",
-   "fieldname": "yojana_name",
-   "fieldtype": "Data",
-   "label": "Yojana Name",
+   "label": "Prastav Name",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_qnim",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "subdivision_id",
@@ -152,7 +147,36 @@
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Subdivision Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "division_id",
+   "fieldtype": "Link",
+   "label": "Division ID",
+   "options": "Division"
+  },
+  {
+   "fetch_from": "division_id.division_name",
+   "fieldname": "division_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Division Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "yojana_id",
+   "fieldtype": "Link",
+   "label": "Yojana ID",
+   "options": "Yojana"
+  },
+  {
+   "fetch_from": "yojana_id.yojana_name",
+   "fieldname": "yojana_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Yojana Name",
    "read_only": 1
   },
   {
@@ -161,59 +185,14 @@
    "label": "Gut Details"
   },
   {
-   "fieldname": "gut_number",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "gut_number",
-   "unique": 1
-  },
-  {
    "fieldname": "column_break_csgw",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_ebos",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "current_stage",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Current Stage",
-   "options": "Stage"
-  },
-  {
-   "fieldname": "section_break_qbhp",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "total_area",
+   "fieldname": "gut",
    "fieldtype": "Data",
-   "label": "Total Area"
-  },
-  {
-   "fieldname": "column_break_xkgz",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "affected_area",
-   "fieldtype": "Data",
-   "label": "Affected Area"
-  },
-  {
-   "fieldname": "column_break_cvtl",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "aquisition_type",
-   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Aquisition type",
-   "options": "1\n2\n3"
-  },
-  {
-   "fieldname": "section_break_lkwp",
-   "fieldtype": "Section Break"
+   "label": "Gut  "
   },
   {
    "fieldname": "land_type",
@@ -222,38 +201,68 @@
    "label": "Land Type"
   },
   {
-   "fieldname": "column_break_qjox",
+   "fieldname": "column_break_mtaz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gut_number",
+   "fieldtype": "Int",
+   "in_standard_filter": 1,
+   "label": "Gut Number",
+   "unique": 1
   },
   {
    "fieldname": "landholder",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Landholder"
   },
   {
-   "fieldname": "section_break_nhlx",
-   "fieldtype": "Section Break",
-   "label": "7/12"
-  },
-  {
-   "fieldname": "record",
-   "fieldtype": "Data",
-   "label": "7/12 Record"
+   "fieldname": "column_break_ebos",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "gut_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Gut  Name"
+   "in_standard_filter": 1,
+   "label": "Gut Name "
   },
   {
-   "fieldname": "gut_name_words",
-   "fieldtype": "Data",
-   "label": "Gut Name in words"
+   "fieldname": "current_stage",
+   "fieldtype": "Link",
+   "label": "Current Stage",
+   "options": "Stage"
   },
   {
-   "fieldname": "column_break_mtaz",
+   "fieldname": "column_break_vcsi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Data",
+   "label": "Total Area"
+  },
+  {
+   "default": "No",
+   "fieldname": "record",
+   "fieldtype": "Data",
+   "label": "7/12 Record"
+  },
+  {
+   "fieldname": "affected_area",
+   "fieldtype": "Data",
+   "label": "Affected Area"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "payemnt_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
   },
   {
    "fieldname": "payment_amount",
@@ -262,14 +271,17 @@
    "precision": "2"
   },
   {
+   "fieldname": "column_break_cxcu",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "payment_remarks",
    "fieldtype": "Data",
    "label": "Payment Remarks"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
+   "fieldname": "column_break_buzg",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "purchase_deed",
@@ -277,28 +289,18 @@
    "label": "Purchase Deed"
   },
   {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_vkgd",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "purchase_deed_date",
    "fieldtype": "Date",
    "label": "Purchase Deed Date"
-  },
-  {
-   "fieldname": "attachment",
-   "fieldtype": "Attach",
-   "label": "Attachment"
-  },
-  {
-   "fieldname": "remarks",
-   "fieldtype": "Text",
-   "label": "Remarks"
-  },
-  {
-   "fieldname": "payemnt_details_section",
-   "fieldtype": "Section Break",
-   "label": "Payment Details"
-  },
-  {
-   "fieldname": "column_break_cxcu",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "remarks_section",
@@ -306,67 +308,31 @@
    "label": "Remarks"
   },
   {
-   "fieldname": "column_break_dpff",
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_hmxk",
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "state_id.state_name",
-   "fieldname": "state_name",
-   "fieldtype": "Data",
-   "label": "State Name",
-   "read_only": 1
+   "fieldname": "column_break_zbxl",
+   "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "village_id.village_name",
-   "fieldname": "village_name",
-   "fieldtype": "Data",
-   "label": "Village Name",
-   "read_only": 1
+   "fieldname": "column_break_huku",
+   "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "village_id.tehsil_name",
-   "fieldname": "tehsil_name",
-   "fieldtype": "Data",
-   "label": "Tehsil Name",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "tehsil_id.district_name",
-   "fieldname": "district_name",
-   "fieldtype": "Data",
-   "label": "District Name",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "prastav_id.prastav_name",
-   "fieldname": "prastav_name",
-   "fieldtype": "Data",
-   "label": "Prastav Name",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "tehsil_id.district_id",
-   "fieldname": "district_id",
-   "fieldtype": "Link",
-   "label": "District ID",
-   "options": "District"
-  },
-  {
-   "fetch_from": "district_id.state_id",
-   "fieldname": "state_id",
-   "fieldtype": "Link",
-   "label": "State ID",
-   "options": "State"
-  },
-  {
-   "fieldname": "column_break_2bge",
+   "fieldname": "column_break_qhzp",
    "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 10:42:45.727896",
+ "modified": "2025-08-30 15:10:58.968693",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",

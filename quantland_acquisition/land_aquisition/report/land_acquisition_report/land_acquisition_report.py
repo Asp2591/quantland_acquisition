@@ -33,6 +33,14 @@ def get_data(filters):
         conditions += " AND gd.village_id = %(village_id)s"
         values["village_id"] = filters["village_id"]
 
+    if filters.get("subdivision_id"):
+        conditions += " AND gd.subdivision_id = %(subdivision_id)s"
+        values["subdivision_id"] = filters["subdivision_id"]
+
+    if filters.get("date"):
+        conditions += " AND gd.date = %(date)s"
+        values["date"] = filters["date"]
+
 
     query = f"""
         SELECT 

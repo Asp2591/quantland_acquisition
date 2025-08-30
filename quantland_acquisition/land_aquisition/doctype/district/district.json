@@ -8,12 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "district_id",
+  "column_break_ftmv",
   "district_name",
   "column_break_ispg",
   "region_id",
+  "column_break_ials",
   "region_name",
   "column_break_vvyb",
   "state_id",
+  "column_break_tolh",
   "state_name"
  ],
  "fields": [
@@ -29,6 +32,7 @@
    "fieldname": "district_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "District Name",
    "reqd": 1,
    "unique": 1
@@ -43,6 +47,8 @@
    "fetch_from": "region_id.region_name",
    "fieldname": "region_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Region Name"
   },
   {
@@ -57,6 +63,8 @@
    "fetch_from": "region_id.state_name",
    "fieldname": "state_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "State Name"
   },
   {
@@ -65,12 +73,24 @@
    "fieldtype": "Link",
    "label": "State ID",
    "options": "State"
+  },
+  {
+   "fieldname": "column_break_ftmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ials",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tolh",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 10:35:09.884499",
+ "modified": "2025-08-30 14:45:28.502928",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "District",

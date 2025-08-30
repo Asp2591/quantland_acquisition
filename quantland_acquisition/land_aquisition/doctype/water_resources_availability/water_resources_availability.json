@@ -26,6 +26,7 @@
    "fetch_from": "district_id.district_name",
    "fieldname": "district_name",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "District Name",
    "read_only": 1
   },
@@ -42,6 +43,7 @@
   {
    "fieldname": "gut_number",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Gut Number",
    "options": "Gut Details"
   },
@@ -59,7 +61,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-28 11:47:08.912188",
+ "modified": "2025-08-30 15:19:29.720738",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Water Resources Availability",

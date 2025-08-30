@@ -28,6 +28,7 @@
    "fieldname": "division_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Division Name",
    "reqd": 1
   },
@@ -46,6 +47,8 @@
    "fetch_from": "yojana_id.yojana_name",
    "fieldname": "yojana_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Yojana Name",
    "read_only": 1
   },
@@ -66,7 +69,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:24:43.541949",
+ "modified": "2025-08-30 11:36:22.291404",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Division",

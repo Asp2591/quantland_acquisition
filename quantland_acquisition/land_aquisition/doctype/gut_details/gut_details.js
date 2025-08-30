@@ -1,3 +1,11 @@
+// Copyright (c) 2025, Quantbit Tech and contributors
+// For license information, please see license.txt
+
+// frappe.ui.form.on("Gut Details", {
+// 	refresh(frm) {
+
+// 	},
+// });
 frappe.ui.form.on('Gut Details', {
     gut_number: frm => {
         fetch_prastav_detail(frm);
@@ -24,7 +32,7 @@ function fetch_prastav_detail(frm) {
             aquisition_type: d.aquisition_type || "",
             landholder: d.landholder || "",
             land_type: d.land_type || "",
-            record: d.record || ""
+            
         });
     });
 }
@@ -33,7 +41,7 @@ async function set_gut_names(frm) {
     const { village_id, gut_number, prastav_id } = frm.doc;
     if (!village_id || !gut_number || !prastav_id) return;
 
-    frm.set_value("gut_name", `${village_id}-${gut_number}-${prastav_id}`);
+    frm.set_value("gut", `${village_id}-${gut_number}-${prastav_id}`);
 
     const [p, v] = await Promise.all([
         frappe.db.get_value("Prastav", prastav_id, "prastav_name"),
@@ -44,6 +52,6 @@ async function set_gut_names(frm) {
     let village_name = v.message?.village_name || "";
 
     if (prastav_name && village_name) {
-        frm.set_value("gut_name_words", `${village_name}-${gut_number}-${prastav_name}`);
+        frm.set_value("gut_name", `${village_name}-${gut_number}-${prastav_name}`);
     }
 }
