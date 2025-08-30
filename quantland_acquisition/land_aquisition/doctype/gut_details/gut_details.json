@@ -7,15 +7,21 @@
  "engine": "InnoDB",
  "field_order": [
   "village_id",
+  "village_name",
   "column_break_trhw",
   "tehsil_id",
+  "tehsil_name",
   "column_break_dsmg",
-  "district",
+  "district_id",
+  "district_name",
   "column_break_rhbd",
   "state_id",
+  "state_name",
+  "section_break_aetv",
   "column_break_oyzv",
   "prastav_id",
-  "section_break_aetv",
+  "prastav_name",
+  "column_break_2bge",
   "division_id",
   "division_name",
   "column_break_crof",
@@ -25,13 +31,13 @@
   "subdivision_id",
   "subdivision_name",
   "gut_details_section",
-  "gut_number",
   "column_break_csgw",
   "gut_name",
   "column_break_mtaz",
   "gut_name_words",
   "column_break_ebos",
   "current_stage",
+  "gut_number",
   "section_break_qbhp",
   "total_area",
   "column_break_xkgz",
@@ -39,18 +45,18 @@
   "column_break_cvtl",
   "aquisition_type",
   "section_break_lkwp",
-  "land_type",
   "column_break_qjox",
   "landholder",
   "section_break_nhlx",
+  "land_type",
   "record",
   "column_break_dpff",
   "attachment",
   "payemnt_details_section",
   "payment_amount",
-  "purchase_deed",
   "column_break_cxcu",
   "payment_remarks",
+  "purchase_deed",
   "date",
   "purchase_deed_date",
   "remarks_section",
@@ -81,22 +87,8 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "tehsil_id.district_id",
-   "fieldname": "district",
-   "fieldtype": "Link",
-   "label": "District ID",
-   "options": "District"
-  },
-  {
    "fieldname": "column_break_rhbd",
    "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "district.state_id",
-   "fieldname": "state_id",
-   "fieldtype": "Link",
-   "label": "State ID",
-   "options": "State"
   },
   {
    "fieldname": "column_break_oyzv",
@@ -159,6 +151,7 @@
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Subdivision Name",
    "read_only": 1
   },
@@ -170,6 +163,7 @@
   {
    "fieldname": "gut_number",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "gut_number",
    "unique": 1
   },
@@ -184,6 +178,7 @@
   {
    "fieldname": "current_stage",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Current Stage",
    "options": "Stage"
   },
@@ -212,6 +207,7 @@
   {
    "fieldname": "aquisition_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Aquisition type",
    "options": "1\n2\n3"
   },
@@ -222,6 +218,7 @@
   {
    "fieldname": "land_type",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Land Type"
   },
   {
@@ -246,6 +243,7 @@
   {
    "fieldname": "gut_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Gut  Name"
   },
   {
@@ -310,13 +308,66 @@
   {
    "fieldname": "column_break_dpff",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "state_id.state_name",
+   "fieldname": "state_name",
+   "fieldtype": "Data",
+   "label": "State Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "village_id.village_name",
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "village_id.tehsil_name",
+   "fieldname": "tehsil_name",
+   "fieldtype": "Data",
+   "label": "Tehsil Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tehsil_id.district_name",
+   "fieldname": "district_name",
+   "fieldtype": "Data",
+   "label": "District Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "prastav_id.prastav_name",
+   "fieldname": "prastav_name",
+   "fieldtype": "Data",
+   "label": "Prastav Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tehsil_id.district_id",
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "label": "District ID",
+   "options": "District"
+  },
+  {
+   "fetch_from": "district_id.state_id",
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "label": "State ID",
+   "options": "State"
+  },
+  {
+   "fieldname": "column_break_2bge",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 17:31:27.460185",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-08-30 10:42:45.727896",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",

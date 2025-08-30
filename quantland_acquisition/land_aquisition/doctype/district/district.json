@@ -43,8 +43,7 @@
    "fetch_from": "region_id.region_name",
    "fieldname": "region_name",
    "fieldtype": "Data",
-   "label": "Region Name",
-   "read_only": 1
+   "label": "Region Name"
   },
   {
    "fieldname": "column_break_ispg",
@@ -55,22 +54,23 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "region_id.state_id",
-   "fieldname": "state_id",
-   "fieldtype": "Data",
-   "label": "State ID"
-  },
-  {
    "fetch_from": "region_id.state_name",
    "fieldname": "state_name",
    "fieldtype": "Data",
    "label": "State Name"
+  },
+  {
+   "fetch_from": "region_id.state_id",
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "label": "State ID",
+   "options": "State"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:32:18.153921",
+ "modified": "2025-08-30 10:35:09.884499",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "District",

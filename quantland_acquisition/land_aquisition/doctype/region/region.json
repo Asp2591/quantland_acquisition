@@ -7,9 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "region_id",
-  "state_id",
-  "column_break_tfyz",
   "region_name",
+  "column_break_tfyz",
+  "state_id",
   "state_name"
  ],
  "fields": [
@@ -48,7 +48,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 14:16:54.250391",
+ "modified": "2025-08-30 10:07:58.310738",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Region",
