@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "yojana_id",
-  "circle_id",
-  "column_break_qops",
+  "column_break_tsxe",
   "yojana_name",
+  "column_break_qops",
+  "circle_id",
+  "column_break_ijik",
   "circle_name"
  ],
  "fields": [
@@ -48,13 +50,21 @@
   {
    "fieldname": "column_break_qops",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tsxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ijik",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 11:34:12.259060",
- "modified_by": "Administrator",
+ "modified": "2025-08-30 18:50:38.002938",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Yojana",
  "naming_rule": "By fieldname",

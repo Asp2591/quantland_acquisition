@@ -8,9 +8,11 @@
  "field_order": [
   "primary_details_section",
   "division_id",
-  "yojana_id",
-  "column_break_gwsz",
+  "column_break_njzs",
   "division_name",
+  "column_break_gwsz",
+  "yojana_id",
+  "column_break_xltt",
   "yojana_name",
   "column_break_enkz",
   "division_shortform"
@@ -64,13 +66,21 @@
    "fieldname": "primary_details_section",
    "fieldtype": "Section Break",
    "label": "Primary Details"
+  },
+  {
+   "fieldname": "column_break_njzs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xltt",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 11:36:22.291404",
- "modified_by": "Administrator",
+ "modified": "2025-08-30 18:50:53.881764",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Division",
  "naming_rule": "By fieldname",

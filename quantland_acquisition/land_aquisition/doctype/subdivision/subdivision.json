@@ -7,9 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "subdivision_id",
-  "division_id",
-  "column_break_xyep",
+  "column_break_pidj",
   "subdivision_name",
+  "column_break_xyep",
+  "division_id",
+  "column_break_ltil",
   "division_name"
  ],
  "fields": [
@@ -46,13 +48,21 @@
    "in_standard_filter": 1,
    "label": "Division Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pidj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ltil",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 11:39:08.293126",
- "modified_by": "Administrator",
+ "modified": "2025-08-30 18:51:30.784779",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Subdivision",
  "naming_rule": "By fieldname",

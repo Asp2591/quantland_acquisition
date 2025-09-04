@@ -8,11 +8,15 @@
  "engine": "InnoDB",
  "field_order": [
   "village_id",
-  "tehsil_id",
-  "district_id",
-  "column_break_dbmx",
+  "column_break_sjlz",
   "village_name",
+  "column_break_acsz",
+  "tehsil_id",
+  "column_break_tsig",
   "tehsil_name",
+  "column_break_dbmx",
+  "district_id",
+  "column_break_dsds",
   "district_name"
  ],
  "fields": [
@@ -65,13 +69,29 @@
   {
    "fieldname": "column_break_dbmx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sjlz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_acsz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tsig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dsds",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 11:32:58.413249",
- "modified_by": "Administrator",
+ "modified": "2025-08-30 18:50:24.392121",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Village",
  "naming_rule": "By fieldname",

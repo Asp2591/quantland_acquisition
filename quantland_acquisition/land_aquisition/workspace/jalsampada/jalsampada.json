@@ -1,7 +1,7 @@
 {
  "app": "frappe",
  "charts": [],
- "content": "[{\"id\":\"_kZDLCeh7Y\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Jalsampada</span>\",\"col\":12}},{\"id\":\"mSv7fdyPDI\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"SqcvLWajG3\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"MiEg2WGhzL\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"_kZDLCeh7Y\",\"type\":\"header\",\"data\":{\"text\":\"<br>\",\"col\":12}},{\"id\":\"mSv7fdyPDI\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"SqcvLWajG3\",\"type\":\"card\",\"data\":{\"card_name\":\"Transactions\",\"col\":4}},{\"id\":\"MiEg2WGhzL\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2025-08-25 14:34:58.004908",
  "custom_blocks": [],
  "docstatus": 0,
@@ -223,12 +223,12 @@
    "type": "Link"
   }
  ],
- "modified": "2025-08-29 14:00:00.047455",
- "modified_by": "Administrator",
+ "modified": "2025-09-04 12:45:18.121728",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Jalsampada",
  "number_cards": [],
- "owner": "Administrator",
+ "owner": "atharvapatkar@erpdata.in",
  "parent_page": "Jalsampada",
  "public": 1,
  "quick_lists": [],
