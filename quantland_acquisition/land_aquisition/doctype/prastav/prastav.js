@@ -6,8 +6,110 @@
 
 // 	},
 // });
-frappe.ui.form.on('Prastav', {
+frappe.ui.form.on("Prastav", {
     upload_child_data: function(frm) {
-        // Open file dialog or call server method to read CSV
+        // handle CSV upload if needed
     }
 });
+
+frappe.ui.form.on("Prastav Details", {
+    cultivated_area: calculate_area,
+    affected_area: calculate_area,
+
+    size_on_paper: calculate_size,
+    hectare_size: calculate_size,
+
+    value_of_acquired_land: land_price_by_factor,
+    factor: land_price_by_factor,
+
+    trees: direct_purchase_by_private_nego,
+    houses: direct_purchase_by_private_nego,
+    well_pipeline: direct_purchase_by_private_nego,
+    others: direct_purchase_by_private_nego,
+
+    property_valuation_direct_purchase: factor_plus_direct_purchase_amt,
+    land_price_by_factor: factor_plus_direct_purchase_amt,
+
+    factor_purchase_total:total_relief_amt,
+
+    relief_amt:grand_total_amt_calc,
+    grand_total:additional_perc_amt,
+
+    additional_amount_25_by_govt:total_renum,
+    total_renumeration:amount_of_compensation_calc
+});
+
+function calculate_area(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(cdt, cdn, "total_area", (row.cultivated_area || 0) + (row.affected_area || 0));
+}
+
+function calculate_size(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(cdt, cdn, "land_size", (row.size_on_paper || 0) + (row.hectare_size || 0));
+}
+
+function land_price_by_factor(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(cdt, cdn, "land_price_by_factor", (row.factor || 0) * (row.value_of_acquired_land || 0));
+}
+
+function direct_purchase_by_private_nego(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(
+        cdt, cdn,
+        "property_valuation_direct_purchase",
+        (row.trees || 0) + (row.houses || 0) + (row.well_pipeline || 0) + (row.others || 0)
+    );
+}
+
+function factor_plus_direct_purchase_amt(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(
+        cdt, cdn,
+        "factor_purchase_total",
+        (row.land_price_by_factor || 0) + (row.property_valuation_direct_purchase || 0)
+    );
+}
+function total_relief_amt(frm, cdt, cdn) {
+    let row = frappe.get_doc(cdt, cdn);
+    frappe.model.set_value(
+        cdt, cdn,
+        "relief_amt",
+        (row.factor_purchase_total || 0)
+    );
+}
+function grand_total_amt_calc(frm,cdt,cdn){
+    let row=frappe.get_doc(cdt,cdn);
+    frappe.model.set_value(
+        cdt,cdn,
+        "grand_total",
+        (row.relief_amt||0)* 2
+    )
+}
+function additional_perc_amt(frm,cdt,cdn){
+    let row=frappe.get_doc(cdt,cdn);
+    frappe.model.set_value(
+        cdt,cdn,
+        "additional_amount_25_by_govt",
+        (row.grand_total||0)* 0.25
+    )
+}
+function total_renum(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+    frappe.model.set_value(
+        cdt,
+        cdn,
+        "total_renumeration",
+        (row.grand_total || 0)+(row.additional_amount_25_by_govt||0)
+    );
+}
+function amount_of_compensation_calc(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+    frappe.model.set_value(
+        cdt,
+        cdn,
+        "total_amount_of_compensation",
+        (row.total_renumeration || 0)
+    );
+}
