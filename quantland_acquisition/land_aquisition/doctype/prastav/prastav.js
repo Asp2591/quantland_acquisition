@@ -36,6 +36,8 @@ frappe.ui.form.on("Prastav Details", {
     grand_total:additional_perc_amt,
 
     additional_amount_25_by_govt:total_renum,
+    
+    deductible_amount:amount_of_compensation_calc,
     total_renumeration:amount_of_compensation_calc
 });
 
@@ -84,7 +86,7 @@ function grand_total_amt_calc(frm,cdt,cdn){
     frappe.model.set_value(
         cdt,cdn,
         "grand_total",
-        (row.relief_amt||0)* 2
+        (row.relief_amt||0)+(row.factor_purchase_total||0)
     )
 }
 function additional_perc_amt(frm,cdt,cdn){
@@ -104,12 +106,16 @@ function total_renum(frm, cdt, cdn) {
         (row.grand_total || 0)+(row.additional_amount_25_by_govt||0)
     );
 }
+
 function amount_of_compensation_calc(frm, cdt, cdn) {
     let row = locals[cdt][cdn];
     frappe.model.set_value(
         cdt,
         cdn,
         "total_amount_of_compensation",
-        (row.total_renumeration || 0)
+        (row.total_renumeration || 0)-(row.deductible_amount||0)
     );
+    frm.refresh_field("total_amount_of_compensation");
+
 }
+

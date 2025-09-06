@@ -39,6 +39,7 @@
   "factor",
   "well_pipeline",
   "relief_amt",
+  "deductible_amount",
   "column_break_wpuq",
   "land_price_by_factor",
   "others",
@@ -282,13 +283,19 @@
    "fieldtype": "Select",
    "label": "712_record",
    "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "deductible_amount",
+   "fieldtype": "Float",
+   "label": "Deductible Amount",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-05 18:38:08.410017",
+ "modified": "2025-09-06 11:31:16.492812",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",

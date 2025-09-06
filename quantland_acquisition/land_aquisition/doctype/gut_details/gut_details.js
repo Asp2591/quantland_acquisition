@@ -7,6 +7,15 @@
 // 	},
 // });
 frappe.ui.form.on('Gut Details', {
+     onload: function(frm) {
+        frm.set_query("subdivision_id", function() {
+            return {
+                filters: {
+                    "division_id": frm.doc.division_id  // only subdivisions with this division_id
+                }
+            };
+        });
+    },
     gut_number: frm => {
         fetch_prastav_detail(frm);
         set_gut_names(frm);
@@ -16,6 +25,8 @@ frappe.ui.form.on('Gut Details', {
         set_gut_names(frm);
     },
     village_id: frm => set_gut_names(frm)
+
+   
 });
 
 function fetch_prastav_detail(frm) {
@@ -52,7 +63,8 @@ function fetch_prastav_detail(frm) {
             trees:d.trees||"",
             houses:d.houses||"",
             others:d.others||"",
-            well_pipeline:d.well_pipeline||""
+            well_pipeline:d.well_pipeline||"",
+            deductible_amount:d.deductible_amount||""
 
         });
     });

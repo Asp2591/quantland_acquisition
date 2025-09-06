@@ -68,6 +68,7 @@
   "land_price_by_factor",
   "others",
   "additional_amt",
+  "deductible_amount",
   "payemnt_details_section",
   "payment_amount",
   "column_break_cxcu",
@@ -476,12 +477,18 @@
    "fieldtype": "Float",
    "label": "Valuation on Others",
    "precision": "2"
+  },
+  {
+   "fieldname": "deductible_amount",
+   "fieldtype": "Float",
+   "label": "Deductible Amount",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 10:02:01.669746",
+ "modified": "2025-09-06 11:31:06.843065",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
