@@ -51,20 +51,23 @@
   "land_size",
   "712_section",
   "per_hectare_rate_by_district_level_committee",
-  "private_acquisition_area",
+  "trees",
+  "property_valuation_direct_purchase",
   "grand_total",
   "column_break_zzuj",
   "value_of_acquired_land",
-  "property_valuation_direct_purchase",
-  "additional_amt",
-  "column_break_yuol",
-  "factor",
+  "houses",
   "total_value_factor_and_direct_purchase",
   "total_renumeration_amount",
-  "column_break_fgrj",
-  "land_price_by_factor",
+  "column_break_yuol",
+  "factor",
+  "well_pipeline",
   "relief_amt",
   "total_amount_of_compensation",
+  "column_break_fgrj",
+  "land_price_by_factor",
+  "others",
+  "additional_amt",
   "payemnt_details_section",
   "payment_amount",
   "column_break_cxcu",
@@ -347,7 +350,7 @@
   },
   {
    "fieldname": "size_on_paper",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "label": "Size on 7/12"
   },
   {
@@ -382,11 +385,6 @@
    "fieldname": "per_hectare_rate_by_district_level_committee",
    "fieldtype": "Currency",
    "label": "Per Hectare rate by District Level Committee"
-  },
-  {
-   "fieldname": "private_acquisition_area",
-   "fieldtype": "Data",
-   "label": "Acquisition Area by Private Negotiation   "
   },
   {
    "fieldname": "grand_total",
@@ -454,12 +452,36 @@
    "fieldname": "section_break_tled",
    "fieldtype": "Section Break",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "trees",
+   "fieldtype": "Float",
+   "label": "Valuation on Trees",
+   "precision": "2"
+  },
+  {
+   "fieldname": "houses",
+   "fieldtype": "Float",
+   "label": "Valuation on Houses",
+   "precision": "2"
+  },
+  {
+   "fieldname": "well_pipeline",
+   "fieldtype": "Float",
+   "label": "Valuation on Well/Pipeline",
+   "precision": "2"
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Float",
+   "label": "Valuation on Others",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-05 13:17:06.067478",
+ "modified": "2025-09-06 10:02:01.669746",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",

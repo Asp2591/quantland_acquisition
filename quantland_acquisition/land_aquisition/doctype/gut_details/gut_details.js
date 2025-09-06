@@ -32,7 +32,28 @@ function fetch_prastav_detail(frm) {
             aquisition_type: d.aquisition_type || "",
             landholder: d.landholder || "",
             land_type: d.land_type || "",
-            
+            group_number:d.group_number||"",
+            cultivated_area:d.cultivated_area||0,
+            size_on_paper:d.size_on_paper||0,
+            hectare_size:d.hectare_size||0,
+            land_size:d.land_size||0,
+            per_hectare_rate_by_district_level_committee:d.per_hectare_rate_by_district_level_committee||0,
+            value_of_acquired_land:d.value_of_acquired_land||0,
+            factor:d.factor||"",
+            land_price_by_factor:d.land_price_by_factor||"",
+            private_acquisition_area:d.private_acquisition_area||"",
+            property_valuation_direct_purchase:d.property_valuation_direct_purchase||"",
+            total_value_factor_and_direct_purchase:d.factor_purchase_total||"",
+            relief_amt:d.relief_amt||"",
+            grand_total:d.grand_total||"",
+            additional_amt:d.additional_amount_25_by_govt||"",
+            total_renumeration_amount:d.total_renumeration||"",
+            total_amount_of_compensation:d.total_amount_of_compensation||"",
+            trees:d.trees||"",
+            houses:d.houses||"",
+            others:d.others||"",
+            well_pipeline:d.well_pipeline||""
+
         });
     });
 }
