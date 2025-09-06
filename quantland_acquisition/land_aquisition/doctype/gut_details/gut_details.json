@@ -51,24 +51,33 @@
   "land_size",
   "712_section",
   "per_hectare_rate_by_district_level_committee",
-  "trees",
-  "property_valuation_direct_purchase",
-  "grand_total",
   "column_break_zzuj",
   "value_of_acquired_land",
-  "houses",
-  "total_value_factor_and_direct_purchase",
-  "total_renumeration_amount",
   "column_break_yuol",
   "factor",
-  "well_pipeline",
-  "relief_amt",
-  "total_amount_of_compensation",
   "column_break_fgrj",
   "land_price_by_factor",
+  "section_break_dkyr",
+  "houses",
+  "column_break_nqrn",
+  "well_pipeline",
+  "column_break_bwjr",
+  "trees",
+  "column_break_shih",
   "others",
-  "additional_amt",
+  "column_break_qwni",
+  "property_valuation_direct_purchase",
+  "section_break_sopu",
+  "total_value_factor_and_direct_purchase",
   "deductible_amount",
+  "column_break_kgkj",
+  "relief_amt",
+  "total_renumeration_amount",
+  "column_break_plqy",
+  "total_amount_of_compensation",
+  "grand_total",
+  "column_break_pbab",
+  "additional_amt",
   "payemnt_details_section",
   "payment_amount",
   "column_break_cxcu",
@@ -483,12 +492,48 @@
    "fieldtype": "Float",
    "label": "Deductible Amount",
    "precision": "2"
+  },
+  {
+   "fieldname": "section_break_dkyr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nqrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bwjr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_shih",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qwni",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_sopu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kgkj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_plqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pbab",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 11:31:06.843065",
+ "modified": "2025-09-06 12:20:01.716172",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",

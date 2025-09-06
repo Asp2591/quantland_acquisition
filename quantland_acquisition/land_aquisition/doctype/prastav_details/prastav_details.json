@@ -30,24 +30,30 @@
   "712_section",
   "per_hectare_rate_by_district_level_committee",
   "trees",
-  "factor_purchase_total",
   "column_break_zzuj",
   "value_of_acquired_land",
-  "houses",
-  "total_amount_of_compensation",
+  "well_pipeline",
   "column_break_yuol",
   "factor",
-  "well_pipeline",
-  "relief_amt",
-  "deductible_amount",
+  "houses",
   "column_break_wpuq",
   "land_price_by_factor",
   "others",
-  "additional_amount_25_by_govt",
   "column_break_fgrj",
   "grand_total",
   "property_valuation_direct_purchase",
+  "section_break_zlgu",
+  "factor_purchase_total",
+  "column_break_pyvz",
+  "relief_amt",
+  "column_break_wujn",
+  "additional_amount_25_by_govt",
+  "column_break_uelv",
   "total_renumeration",
+  "column_break_tqfb",
+  "deductible_amount",
+  "column_break_jimk",
+  "total_amount_of_compensation",
   "section_break_tled",
   "remark"
  ],
@@ -289,13 +295,37 @@
    "fieldtype": "Float",
    "label": "Deductible Amount",
    "precision": "2"
+  },
+  {
+   "fieldname": "section_break_zlgu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pyvz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wujn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uelv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tqfb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jimk",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-06 11:31:16.492812",
+ "modified": "2025-09-06 12:25:31.524210",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",

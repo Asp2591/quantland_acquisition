@@ -24,17 +24,22 @@ frappe.ui.form.on('Gut Details', {
         fetch_prastav_detail(frm);
         set_gut_names(frm);
     },
-    village_id: frm => set_gut_names(frm)
+    // village_id: frm => set_gut_names(frm)
+    village_id: frm => {
+        fetch_prastav_detail(frm);
+        set_gut_names(frm);
+    },
 
    
 });
 
 function fetch_prastav_detail(frm) {
-    if (!frm.doc.prastav_id || !frm.doc.gut_number) return;
+    if (!frm.doc.prastav_id || !frm.doc.gut_number|| !frm.doc.village_id) return;
 
     frappe.db.get_doc("Prastav", frm.doc.prastav_id).then(prastav => {
         let d = (prastav.prastav_details || []).find(r =>
-            String(r.gut_number).trim() === String(frm.doc.gut_number).trim()
+            String(r.gut_number).trim() === String(frm.doc.gut_number).trim()&&
+            String(r.village_id).trim() === String(frm.doc.village_id).trim()
         ) || {};
 
         frm.set_value({
@@ -64,7 +69,8 @@ function fetch_prastav_detail(frm) {
             houses:d.houses||"",
             others:d.others||"",
             well_pipeline:d.well_pipeline||"",
-            deductible_amount:d.deductible_amount||""
+            deductible_amount:d.deductible_amount||"",
+            village_id:d.village_id
 
         });
     });
