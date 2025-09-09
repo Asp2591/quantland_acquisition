@@ -17,9 +17,7 @@
   "division_name",
   "column_break_jxbg",
   "yojana_id",
-  "yojana_name",
-  "section_break_jppa",
-  "prakalp_details"
+  "yojana_name"
  ],
  "fields": [
   {
@@ -72,16 +70,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "prakalp_details",
-   "fieldtype": "Table",
-   "label": "Prakalp Details",
-   "options": "Prakalp Details"
-  },
-  {
-   "fieldname": "section_break_jppa",
-   "fieldtype": "Section Break"
-  },
-  {
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
@@ -108,7 +96,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 15:43:18.417517",
+ "modified": "2025-09-07 16:15:34.592525",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prakalp",

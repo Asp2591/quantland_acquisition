@@ -9,15 +9,30 @@
 frappe.ui.form.on("Prastav", {
     upload_child_data: function(frm) {
         // handle CSV upload if needed
-    }
+    },
+    village_id: function(frm) {
+        fetch_prastav_details(frm);
+    },
+    prastav_id: function(frm) {
+        fetch_prastav_details(frm);
+    },
+    // after_save: function(frm) {
+    //     frm.doc.prastav_details.forEach(row => {
+    //         if (!row.gut_number || !row.village_id) return;
+    //         frappe.db.exists('Gut Details', row.gut_number).then(exists => {
+    //             if (!exists) {
+    //                 frappe.throw(`Gut Details created: ${row.gut_number}`);
+    //             } else {
+    //                 frappe.msgprint(`Gut Details already exists: ${row.gut_number}`);
+    //             }
+    //         });
+    //     });
+    // }
 });
 
 frappe.ui.form.on("Prastav Details", {
     cultivated_area: calculate_area,
-    affected_area: calculate_area,
-
-    size_on_paper: calculate_size,
-    hectare_size: calculate_size,
+    waste_area: calculate_area,
 
     value_of_acquired_land: land_price_by_factor,
     factor: land_price_by_factor,
@@ -43,13 +58,10 @@ frappe.ui.form.on("Prastav Details", {
 
 function calculate_area(frm, cdt, cdn) {
     let row = frappe.get_doc(cdt, cdn);
-    frappe.model.set_value(cdt, cdn, "total_area", (row.cultivated_area || 0) + (row.affected_area || 0));
+    frappe.model.set_value(cdt, cdn, "total_area", (row.cultivated_area || 0) + (row.waste_area || 0));
 }
 
-function calculate_size(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
-    frappe.model.set_value(cdt, cdn, "land_size", (row.size_on_paper || 0) + (row.hectare_size || 0));
-}
+
 
 function land_price_by_factor(frm, cdt, cdn) {
     let row = frappe.get_doc(cdt, cdn);
@@ -118,4 +130,33 @@ function amount_of_compensation_calc(frm, cdt, cdn) {
     frm.refresh_field("total_amount_of_compensation");
 
 }
+function fetch_prastav_details(frm) {
+    if (!frm.doc.village_id || !frm.doc.prastav_id) {
+        return;
+    }
+
+    frappe.db.get_doc('Prastav', frm.doc.prastav_id)
+    .then(prastav => {
+        if (prastav) {
+            // frm.set_value('division_id', prastav.division_id || '');
+            frm.set_value('subdivision_id', prastav.subdivision_id || '');
+            frm.set_value('yojana_id', prastav.yojana_id || '');
+        }
+    })
+    .catch(err => {
+        frappe.msgprint(__('Could not fetch Prastav details'));
+        console.error(err);
+    });
+}
+frappe.ui.form.on('Prastav', {
+    village_id: function(frm) {
+        if (!frm.doc.village_id) return;
+
+        frm.doc.prastav_details.forEach(row => {
+            frappe.model.set_value(row.doctype, row.name, 'village_id', frm.doc.village_id);
+        });
+
+        frm.refresh_field('prastav_details');
+    }
+});
 

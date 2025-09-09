@@ -1,0 +1,42 @@
+{
+ "aggregate_function_based_on": "relief_amt",
+ "based_on": "",
+ "chart_name": "\u0917\u093e\u0935\u093e\u091a\u0947 \u0928\u093e\u0935 x_field y_axis x \u0938\u0902\u092a\u093e\u0926\u0928 \u0915\u0930\u093e\u0935\u092f\u093e\u091a\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930",
+ "chart_type": "Report",
+ "creation": "2025-09-08 19:31:12.416510",
+ "currency": "Hectare",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_based_on": "village_id",
+ "group_by_type": "Sum",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2025-09-08 19:27:13.026838",
+ "modified": "2025-09-08 19:34:25.994961",
+ "modified_by": "Administrator",
+ "module": "Land Aquisition",
+ "name": "\u0917\u093e\u0935\u093e\u091a\u0947 \u0928\u093e\u0935 x_field y_axis x \u0938\u0902\u092a\u093e\u0926\u0928 \u0915\u0930\u093e\u0935\u092f\u093e\u091a\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930",
+ "number_of_groups": 4,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "report_name": "Kanthi Vibhag 1 Valuation Report",
+ "roles": [],
+ "show_values_over_chart": 0,
+ "source": "",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Pie",
+ "use_report_chart": 0,
+ "value_based_on": "",
+ "x_field": "village_name",
+ "y_axis": [
+  {
+   "y_field": "affected_area"
+  }
+ ]
+}

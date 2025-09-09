@@ -1,0 +1,41 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "\u0938\u0902\u092a\u093e\u0926\u0928 \u092a\u0926\u094d\u0927\u0924\u093f",
+   "width": "Half"
+  },
+  {
+   "chart": "\u091c\u092e\u093f\u0928\u0940\u091a\u0940 \u092a\u094d\u0930\u0924\u0935\u093e\u0930\u0940",
+   "width": "Half"
+  },
+  {
+   "chart": "\u090f\u0915\u0942\u0923 \u0915\u094d\u0937\u0947\u0924\u094d\u0930",
+   "width": "Half"
+  },
+  {
+   "chart": "\u0938\u0902\u092a\u093e\u0926\u0928\u093e\u091a\u093e \u092a\u094d\u0930\u0915\u093e\u0930 x \u090f\u0915\u0942\u0923 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u092b\u0933",
+   "width": "Half"
+  },
+  {
+   "chart": "\u0917\u093e\u0935\u093e\u091a\u0947 \u0928\u093e\u0935 x_field y_axis x \u0938\u0902\u092a\u093e\u0926\u0928 \u0915\u0930\u093e\u0935\u092f\u093e\u091a\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930",
+   "width": "Half"
+  },
+  {
+   "chart": "\u091c\u092e\u093f\u0928\u0940\u091a\u0940 \u092a\u094d\u0930\u0924\u0935\u093e\u0930\u0940 x \u0939\u0947\u0915\u094d\u091f\u0947\u0905\u0930 \u0906\u0915\u093e\u0930",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-09-08 18:23:26.859956",
+ "dashboard_name": "Land Acquisition",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-09-08 19:37:11.575282",
+ "modified_by": "Administrator",
+ "module": "Land Aquisition",
+ "name": "Land Acquisition",
+ "owner": "Administrator"
+}

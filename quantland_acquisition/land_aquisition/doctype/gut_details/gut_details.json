@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:gut_number",
+ "autoname": "field:gut_name",
  "creation": "2025-08-30 12:58:52.210543",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -29,26 +29,23 @@
   "column_break_csgw",
   "gut_number",
   "column_break_inpu",
-  "gut",
-  "column_break_mtaz",
   "gut_name",
-  "column_break_ebos",
   "current_stage",
   "land_details_section",
   "landholder",
   "aquisition_type",
   "cultivated_area",
-  "size_on_paper",
+  "affected_area",
   "column_break_azhg",
   "record",
   "group_number",
-  "affected_area",
-  "hectare_size",
+  "waste_area",
+  "size_on_paper",
   "column_break_pgql",
   "attachment",
   "land_type",
   "total_area",
-  "land_size",
+  "hectare_size",
   "712_section",
   "per_hectare_rate_by_district_level_committee",
   "column_break_zzuj",
@@ -69,13 +66,13 @@
   "property_valuation_direct_purchase",
   "section_break_sopu",
   "total_value_factor_and_direct_purchase",
-  "deductible_amount",
+  "total_renumeration_amount",
   "column_break_kgkj",
   "relief_amt",
-  "total_renumeration_amount",
+  "deductible_amount",
   "column_break_plqy",
-  "total_amount_of_compensation",
   "grand_total",
+  "total_amount_of_compensation",
   "column_break_pbab",
   "additional_amt",
   "payemnt_details_section",
@@ -83,12 +80,15 @@
   "column_break_cxcu",
   "payment_remarks",
   "column_break_buzg",
+  "date",
+  "column_break_hutw",
   "purchase_deed",
   "column_break_huku",
-  "date",
-  "column_break_vkgd",
   "purchase_deed_date",
+  "column_break_vkgd",
+  "attach",
   "section_break_tled",
+  "stage_history",
   "remarks"
  ],
  "fields": [
@@ -219,24 +219,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "gut",
-   "fieldtype": "Data",
-   "label": "Gut  "
-  },
-  {
    "fieldname": "land_type",
    "fieldtype": "Data",
    "label": "Land Type"
   },
   {
-   "fieldname": "column_break_mtaz",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "gut_number",
    "fieldtype": "Int",
-   "label": "Gut Number",
-   "unique": 1
+   "label": "Gut Number"
   },
   {
    "fieldname": "landholder",
@@ -244,13 +234,10 @@
    "label": "Landholder"
   },
   {
-   "fieldname": "column_break_ebos",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "gut_name",
    "fieldtype": "Data",
-   "label": "Gut Name "
+   "label": "Gut Name ",
+   "unique": 1
   },
   {
    "fieldname": "current_stage",
@@ -304,11 +291,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "purchase_deed",
-   "fieldtype": "Data",
-   "label": "Purchase Deed"
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -349,11 +331,6 @@
    "label": "Land Details"
   },
   {
-   "fieldname": "aquisition_type",
-   "fieldtype": "Data",
-   "label": "Aquisition Type"
-  },
-  {
    "fieldname": "cultivated_area",
    "fieldtype": "Float",
    "label": "Cultivated Area"
@@ -380,11 +357,6 @@
   {
    "fieldname": "column_break_pgql",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "land_size",
-   "fieldtype": "Float",
-   "label": "Total Land Size"
   },
   {
    "fieldname": "712_section",
@@ -528,12 +500,44 @@
   {
    "fieldname": "column_break_pbab",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stage_history",
+   "fieldtype": "Table",
+   "label": "Gut Stages History",
+   "options": "Gut Stages"
+  },
+  {
+   "fieldname": "waste_area",
+   "fieldtype": "Data",
+   "label": "Uncultivated Waste Area"
+  },
+  {
+   "fieldname": "column_break_hutw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "purchase_deed",
+   "fieldtype": "Select",
+   "label": "Purchase Deed",
+   "options": "Available\nNot Available"
+  },
+  {
+   "fieldname": "aquisition_type",
+   "fieldtype": "Select",
+   "label": "Aquisition Type",
+   "options": "Acquisition Type"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 12:20:01.716172",
+ "modified": "2025-09-09 12:03:14.008913",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
@@ -554,7 +558,6 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "gut_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

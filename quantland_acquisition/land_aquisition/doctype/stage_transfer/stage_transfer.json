@@ -31,6 +31,7 @@
    "fetch_from": "prastav_id.prastav_name",
    "fieldname": "prastav_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Prastav Name",
    "read_only": 1
   },
@@ -49,6 +50,7 @@
    "fetch_from": "division_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Division Name",
    "read_only": 1
   },
@@ -67,6 +69,7 @@
    "fetch_from": "yojana_id.yojana_name",
    "fieldname": "yojana_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Yojana Name",
    "read_only": 1
   },
@@ -77,6 +80,7 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
@@ -93,8 +97,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-29 17:26:16.645580",
- "modified_by": "Administrator",
+ "modified": "2025-09-07 17:41:40.724539",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
  "naming_rule": "Expression (old style)",

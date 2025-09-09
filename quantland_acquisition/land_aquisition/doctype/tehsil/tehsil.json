@@ -62,7 +62,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-04 16:17:38.495314",
+ "modified": "2025-09-09 11:34:20.523609",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Tehsil",
@@ -83,9 +83,11 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "tehsil_name",
+ "search_fields": "tehsil_name,tehsil_id",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "tehsil_name",
  "track_changes": 1
 }

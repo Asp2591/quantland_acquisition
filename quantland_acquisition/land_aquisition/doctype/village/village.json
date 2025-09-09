@@ -10,6 +10,7 @@
   "village_id",
   "column_break_sjlz",
   "village_name",
+  "village_name_in_english",
   "column_break_acsz",
   "tehsil_id",
   "column_break_tsig",
@@ -87,13 +88,20 @@
   {
    "fieldname": "column_break_dsds",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "village_name_in_english",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Village Name in English"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-04 16:06:07.329223",
- "modified_by": "Administrator",
+ "modified": "2025-09-09 11:13:22.850166",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Village",
  "naming_rule": "By fieldname",
@@ -113,9 +121,11 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "village_name",
+ "search_fields": "village_name,village_id",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "village_name",
  "track_changes": 1
 }

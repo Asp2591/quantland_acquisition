@@ -6,20 +6,29 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "prastav_section",
+  "column_break_ajtz",
+  "date",
   "primary_details_section",
   "prastav_id",
   "prastav_name",
-  "column_break_dqcq",
-  "divison_id",
-  "division_name",
-  "column_break_llij",
+  "prakalp_id",
+  "prakalp_name",
+  "column_break_ebqy",
+  "village_id",
+  "village_name",
   "subdivision_id",
   "subdivision_name",
-  "column_break_ftvo",
+  "column_break_zkyp",
+  "tehsil_id",
+  "tehsil_name",
+  "divison_id",
+  "division_name",
+  "column_break_yzfi",
+  "district_id",
+  "district_name",
   "yojana_id",
   "yojana_name",
-  "column_break_yimh",
-  "date",
   "section_break_kygo",
   "prastav_details"
  ],
@@ -40,6 +49,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "subdivision_id.division_id",
    "fieldname": "divison_id",
    "fieldtype": "Link",
    "label": "Division ID",
@@ -56,11 +66,11 @@
    "read_only": 1
   },
   {
+   "fetch_from": "divison_id.yojana_id",
    "fieldname": "yojana_id",
    "fieldtype": "Link",
    "label": "Yojana ID",
-   "options": "Yojana",
-   "reqd": 1
+   "options": "Yojana"
   },
   {
    "fetch_from": "yojana_id.yojana_name",
@@ -70,10 +80,6 @@
    "in_standard_filter": 1,
    "label": "Yojana Name",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_dqcq",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "date",
@@ -87,10 +93,7 @@
    "label": "Primary Details"
   },
   {
-   "fieldname": "column_break_llij",
-   "fieldtype": "Column Break"
-  },
-  {
+   "fetch_from": "prakalp_id.subdivision_id",
    "fieldname": "subdivision_id",
    "fieldtype": "Link",
    "label": "Subdivision ID",
@@ -119,18 +122,81 @@
    "label": "Prastav Details"
   },
   {
-   "fieldname": "column_break_ftvo",
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "label": "Village ID",
+   "options": "Village"
+  },
+  {
+   "fetch_from": "village_id.village_name",
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name"
+  },
+  {
+   "fieldname": "prakalp_id",
+   "fieldtype": "Link",
+   "label": "Prakalp ID",
+   "options": "Prakalp"
+  },
+  {
+   "fetch_from": "prakalp_id.prakalp_name",
+   "fieldname": "prakalp_name",
+   "fieldtype": "Data",
+   "label": "Prakalp Name"
+  },
+  {
+   "fetch_from": "tehsil_id.tehsil_name",
+   "fieldname": "tehsil_name",
+   "fieldtype": "Data",
+   "label": "Tehsil Name"
+  },
+  {
+   "fetch_from": "village_id.district_id",
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "label": "District ID",
+   "options": "District"
+  },
+  {
+   "fetch_from": "village_id.tehsil_id",
+   "fieldname": "tehsil_id",
+   "fieldtype": "Link",
+   "label": "Tehsil ID",
+   "options": "Tehsil"
+  },
+  {
+   "fieldname": "column_break_zkyp",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_yimh",
+   "fieldname": "column_break_ajtz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yzfi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prastav_section",
+   "fieldtype": "Section Break",
+   "label": "Prastav Details"
+  },
+  {
+   "fieldname": "column_break_ebqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "district_id.district_name",
+   "fieldname": "district_name",
+   "fieldtype": "Data",
+   "label": "District Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 15:35:58.635793",
+ "modified": "2025-09-08 17:07:21.687003",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",

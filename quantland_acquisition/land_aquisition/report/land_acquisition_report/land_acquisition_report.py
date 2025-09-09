@@ -10,20 +10,21 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {"label": "Prastav ID", "fieldname": "prastav_id", "fieldtype": "Link", "options": "Prastav", "width": 150},
-        {"label": "Village Name", "fieldname": "village_name", "fieldtype": "Data", "width": 150},
-        {"label": "Acquisition Type", "fieldname": "aquisition_type", "fieldtype": "Select", "width": 150},
-        {"label": "Gut Number", "fieldname": "gut_number", "fieldtype": "Int", "width": 100},
-        {"label": "Affected Area", "fieldname": "affected_area", "fieldtype": "Data", "width": 120},
-        {"label": "Payment Amount", "fieldname": "payment_amount", "fieldtype": "Currency", "width": 150},
-        {"label": "Payment Remarks", "fieldname": "payment_remarks", "fieldtype": "Data", "width": 180},
-        {"label": "Date", "fieldname": "date", "fieldtype": "Date", "width": 120},
-        {"label": "Purchase Deed", "fieldname": "purchase_deed", "fieldtype": "Data", "width": 150},
-        {"label": "Purchase Deed Date", "fieldname": "purchase_deed_date", "fieldtype": "Date", "width": 150},
-        {"label": "7/12 Record", "fieldname": "record", "fieldtype": "Select", "options": "Yes\nNo", "width": 120},
-        {"label": "Attachment", "fieldname": "attachment", "fieldtype": "Attach", "width": 150},
-        {"label": "Remarks", "fieldname": "remarks", "fieldtype": "Data", "width": 200},
+        {"label": "प्रस्ताव क्रमांक", "fieldname": "prastav_id", "fieldtype": "Link", "options": "Prastav", "width": 150},
+        {"label": "गावाचे नाव", "fieldname": "village_name", "fieldtype": "Data", "width": 150},
+        {"label": "संपादनाचा प्रकार", "fieldname": "aquisition_type", "fieldtype": "Link","options":"Acquisition Type", "width": 150},
+        {"label": "गट क्रमांक", "fieldname": "gut_number", "fieldtype": "Int", "width": 100},
+        {"label": "संपदित करवयाचे क्षेत्र", "fieldname": "affected_area", "fieldtype": "Data", "width": 120},
+        {"label": "मोबदला रक्कम निवाडा रक्कम", "fieldname": "payment_amount", "fieldtype": "Int", "width": 200},
+        {"label": "मोबदला मंजूर संदर्भ", "fieldname": "payment_remarks", "fieldtype": "Data", "width": 180},
+        {"label": "मोबदला मंजूर तारीख", "fieldname": "date", "fieldtype": "Date", "width": 120},
+        {"label": "लाभधारकला सूचना दिनांकत्र", "fieldname": "purchase_deed", "fieldtype": "Data", "width": 150},
+        {"label": "दस्त दिनांक", "fieldname": "purchase_deed_date", "fieldtype": "Date", "width": 150},
+        {"label": "७/१२ नोंद झाली होय/नाही", "fieldname": "record", "fieldtype": "Select", "options": "Yes\nNo", "width": 200},
+        {"label": "संलग्नक उपलब्ध आहे का", "fieldname": "attachment", "fieldtype": "Attach", "width": 150},
+        {"label": "शेरा", "fieldname": "remarks", "fieldtype": "Data", "width": 200},
     ]
+
 
 def get_data(filters):
     conditions = ""
