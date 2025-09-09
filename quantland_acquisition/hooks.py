@@ -254,28 +254,5 @@ web_include_css = [
 # hooks.py
 
 fixtures = [
-    {"dt": "DocType", "filters": [["name", "in", [
-        "Acquisition Type",
-        "Circle",
-        "District",
-        "Division",
-        "Gut Details",
-        "Gut Stages",
-        "Prakalp",
-        "Prakalp Details",
-        "Prastav",
-        "Prastav Details",
-        "Region",
-        "Stage",
-        "Stage Transfer",
-        "Stage Transfer Details",
-        "State",
-        "Subdivision",
-        "Tehsil",
-        "Village",
-        "Water Resource Availability Details",
-        "Water Resources",
-        "Water Resources Availability",
-        "Yojana"
-    ]]]}
+    
 ]
