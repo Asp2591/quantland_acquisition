@@ -24,7 +24,12 @@ frappe.ui.form.on("Prastav", {
             frappe.model.set_value(row.doctype, row.name, 'village_name', frm.doc.village_name);
         });
         frm.refresh_field('prastav_details');
-    }
+    },
+    // refresh: function(frm) {
+    //     frm.fields_dict['prastav_details'].grid.get_field('amount').get_query = function(doc, cdt, cdn) {};
+    //     set_child_readonly(frm);
+    // }
+    
 });
 
 frappe.ui.form.on("Prastav Details", {
@@ -50,7 +55,11 @@ frappe.ui.form.on("Prastav Details", {
     additional_amount_25_by_govt: total_renum,
 
     deductible_amount: amount_of_compensation_calc,
-    total_renumeration: amount_of_compensation_calc
+    total_renumeration: amount_of_compensation_calc,
+   
+    // landholder_type: function(frm, cdt, cdn) {
+    //     set_child_readonly(frm);
+    // }
 });
 
 function calculate_area(frm, cdt, cdn) {
@@ -115,3 +124,15 @@ function fetch_prastav_details(frm) {
     frm.set_value('subdivision_id', frm.doc.subdivision_id || '');
     frm.set_value('yojana_id', frm.doc.yojana_id || '');
 }
+// function set_child_readonly(frm) {
+//     frm.doc.prastav_details.forEach(function(row) {
+//         let grid = frm.fields_dict['prastav_details'].grid;
+//         if(row.landholder_type === '1') {
+//             row.amount = '';
+//             grid.set_df_property('najarana_amount', 'read_only', 1);
+//         } else if(row.landholder_type === '2') {
+//             grid.set_df_property('najarana_amount', 'read_only', 0);
+//         }
+//     });
+//     frm.refresh_field('prastav_details'); 
+// }

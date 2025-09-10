@@ -1,11 +1,7 @@
 // Copyright (c) 2025, Quantbit Tech and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Stage Transfer", {
-// 	refresh(frm) {
 
-// 	},
-// });
 frappe.ui.form.on('Stage Transfer', {
     prastav_id: function(frm) {
         if (!frm.doc.prastav_id) return;
@@ -16,7 +12,15 @@ frappe.ui.form.on('Stage Transfer', {
                 village_name: r.village_name
             }));
         });
-    }
+    },
+    new_stage: function(frm) {
+        if (!frm.doc.new_stage) return;
+
+        frm.doc.stage_transfer_details.forEach(row => {
+            frappe.model.set_value(row.doctype, row.name, 'new_stage', frm.doc.new_stage);
+        });
+        frm.refresh_field('stage_transfer_details');
+    },
 });
 
 frappe.ui.form.on('Stage Transfer Details', {

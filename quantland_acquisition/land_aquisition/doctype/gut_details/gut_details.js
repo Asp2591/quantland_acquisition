@@ -24,6 +24,15 @@ frappe.ui.form.on('Gut Details', {
             };
         });
     },
+    current_stage: function(frm) {
+        append_stage_history(frm);
+    },
+    stage_date: function(frm) {
+        append_stage_history(frm);
+    },
+    srno: function(frm) {
+        append_stage_history(frm);
+    },
     onload: function(frm) {
         frm.set_df_property("attach", "hidden", 1);
     },
@@ -93,5 +102,17 @@ async function set_gut_names(frm) {
 
     if (prastav_name && village_name) {
         frm.set_value("gut_name", `${village_name}-${gut_number}-${prastav_name}`);
+    }
+}
+function append_stage_history(frm) {
+    if (frm.doc.current_stage && frm.doc.stage_date && frm.doc.srno) {
+        let new_row = frm.add_child('stage_history');
+        new_row.current_stage = frm.doc.current_stage;
+        new_row.date = frm.doc.stage_date;
+        new_row.srno = frm.doc.srno;
+
+        frm.refresh_field('stage_history');
+
+        
     }
 }

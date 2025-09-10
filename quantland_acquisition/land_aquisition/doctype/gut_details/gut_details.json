@@ -28,9 +28,15 @@
   "gut_details_section",
   "column_break_csgw",
   "gut_number",
-  "column_break_inpu",
-  "gut_name",
+  "srno",
+  "column_break_pryb",
   "current_stage",
+  "mb_number",
+  "column_break_inpu",
+  "stage_date",
+  "page_number",
+  "column_break_zfex",
+  "gut_name",
   "land_details_section",
   "landholder",
   "aquisition_type",
@@ -79,16 +85,17 @@
   "payment_amount",
   "column_break_cxcu",
   "payment_remarks",
+  "attach",
   "column_break_buzg",
   "date",
   "column_break_hutw",
   "purchase_deed",
+  "after_purchase_attach",
   "column_break_huku",
   "purchase_deed_date",
-  "column_break_vkgd",
-  "attach",
-  "section_break_tled",
+  "section_break_nbyg",
   "stage_history",
+  "section_break_tled",
   "remarks"
  ],
  "fields": [
@@ -247,7 +254,8 @@
   {
    "fieldname": "total_area",
    "fieldtype": "Float",
-   "label": "Total Area"
+   "label": "Total Area",
+   "precision": "0"
   },
   {
    "default": "No",
@@ -258,7 +266,8 @@
   {
    "fieldname": "affected_area",
    "fieldtype": "Float",
-   "label": "Affected Area"
+   "label": "Affected Area",
+   "precision": "0"
   },
   {
    "fieldname": "attachment",
@@ -273,7 +282,8 @@
   {
    "fieldname": "payment_amount",
    "fieldtype": "Currency",
-   "label": "Payment Amount"
+   "label": "Payment Amount",
+   "precision": "0"
   },
   {
    "fieldname": "column_break_cxcu",
@@ -286,15 +296,6 @@
   },
   {
    "fieldname": "column_break_buzg",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fieldname": "column_break_vkgd",
    "fieldtype": "Column Break"
   },
   {
@@ -331,12 +332,14 @@
   {
    "fieldname": "cultivated_area",
    "fieldtype": "Float",
-   "label": "Cultivated Area"
+   "label": "Cultivated Area",
+   "precision": "0"
   },
   {
    "fieldname": "size_on_paper",
    "fieldtype": "Float",
-   "label": "Size on 7/12"
+   "label": "Size on 7/12",
+   "precision": "0"
   },
   {
    "fieldname": "column_break_azhg",
@@ -350,7 +353,8 @@
   {
    "fieldname": "hectare_size",
    "fieldtype": "Float",
-   "label": "Hectare Size"
+   "label": "Hectare Size",
+   "precision": "0"
   },
   {
    "fieldname": "column_break_pgql",
@@ -364,7 +368,8 @@
   {
    "fieldname": "per_hectare_rate_by_district_level_committee",
    "fieldtype": "Currency",
-   "label": "Per Hectare rate by District Level Committee"
+   "label": "Per Hectare rate by District Level Committee",
+   "precision": "0"
   },
   {
    "fieldname": "grand_total",
@@ -378,12 +383,14 @@
   {
    "fieldname": "value_of_acquired_land",
    "fieldtype": "Currency",
-   "label": "Value of Acquired Land"
+   "label": "Value of Acquired Land",
+   "precision": "0"
   },
   {
    "fieldname": "property_valuation_direct_purchase",
    "fieldtype": "Float",
-   "label": "Property Valuation (Direct Purchase)"
+   "label": "Property Valuation (Direct Purchase)",
+   "precision": "0"
   },
   {
    "fieldname": "additional_amt",
@@ -416,7 +423,8 @@
   {
    "fieldname": "land_price_by_factor",
    "fieldtype": "Currency",
-   "label": "Land Price by Factor"
+   "label": "Land Price by Factor",
+   "precision": "0"
   },
   {
    "fieldname": "relief_amt",
@@ -437,31 +445,31 @@
    "fieldname": "trees",
    "fieldtype": "Float",
    "label": "Valuation on Trees",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "houses",
    "fieldtype": "Float",
    "label": "Valuation on Houses",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "well_pipeline",
    "fieldtype": "Float",
    "label": "Valuation on Well/Pipeline",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "others",
    "fieldtype": "Float",
    "label": "Valuation on Others",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "deductible_amount",
    "fieldtype": "Float",
    "label": "Deductible Amount",
-   "precision": "2"
+   "precision": "0"
   },
   {
    "fieldname": "section_break_dkyr",
@@ -517,7 +525,7 @@
   {
    "fieldname": "attach",
    "fieldtype": "Attach",
-   "label": "Attach"
+   "label": "7/12 On Prastav"
   },
   {
    "fieldname": "purchase_deed",
@@ -536,13 +544,56 @@
    "fieldname": "prastav_id",
    "fieldtype": "Data",
    "label": "Prastav ID"
+  },
+  {
+   "fieldname": "column_break_zfex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "stage_date",
+   "fieldtype": "Date",
+   "label": "Stage Date"
+  },
+  {
+   "fieldname": "section_break_nbyg",
+   "fieldtype": "Section Break",
+   "label": "Stages History"
+  },
+  {
+   "fieldname": "mb_number",
+   "fieldtype": "Data",
+   "label": "MB Number"
+  },
+  {
+   "fieldname": "page_number",
+   "fieldtype": "Data",
+   "label": "Page Number"
+  },
+  {
+   "fieldname": "after_purchase_attach",
+   "fieldtype": "Attach",
+   "label": "After Purchase 7/12"
+  },
+  {
+   "fieldname": "srno",
+   "fieldtype": "Data",
+   "label": "Sr.No"
+  },
+  {
+   "fieldname": "column_break_pryb",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 12:21:49.553205",
- "modified_by": "Administrator",
+ "modified": "2025-09-10 18:38:49.289145",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",

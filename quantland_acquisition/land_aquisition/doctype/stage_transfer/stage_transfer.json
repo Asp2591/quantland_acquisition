@@ -15,6 +15,8 @@
   "yojana_id",
   "yojana_name",
   "section_break_bxtc",
+  "srno",
+  "column_break_xhqi",
   "date",
   "column_break_scuu",
   "current_stage",
@@ -118,13 +120,22 @@
    "fieldtype": "Link",
    "label": "New Stage",
    "options": "Stage"
+  },
+  {
+   "fieldname": "srno",
+   "fieldtype": "Data",
+   "label": "Sr.No"
+  },
+  {
+   "fieldname": "column_break_xhqi",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 13:47:50.021820",
- "modified_by": "Administrator",
+ "modified": "2025-09-10 16:53:39.470611",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
  "naming_rule": "Expression (old style)",
