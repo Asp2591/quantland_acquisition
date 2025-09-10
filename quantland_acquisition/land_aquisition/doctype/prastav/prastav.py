@@ -18,7 +18,6 @@ class Prastav(Document):
             division_id=self.divison_id
             yojana_id=self.yojana_id
             prastav_id=self.prastav_id
-
             gut_name = f"{village_name}-{gut_number}-{prastav_name}"
 
             if not gut_number or not village_id:
@@ -27,7 +26,7 @@ class Prastav(Document):
             if not frappe.db.exists("Gut Details", gut_name):
                 doc = frappe.new_doc("Gut Details")
                 
-                doc.name = gut_name
+                doc.gut_name = gut_name
                 doc.gut_number = gut_number
                 doc.village_name = village_name
                 doc.prastav_name = prastav_name
@@ -64,7 +63,6 @@ class Prastav(Document):
                 doc.village_id = village_id
 
                 doc.insert()
-                frappe.db.commit()
                 frappe.msgprint(f"Gut Details created: {gut_name}")
             else:
                 doc = frappe.get_doc("Gut Details",gut_name)
@@ -107,7 +105,6 @@ class Prastav(Document):
                 doc.village_id = village_id
 
                 doc.save()
-                frappe.db.commit()
                 frappe.msgprint(f"Gut Details updated: {gut_name}")
 
 

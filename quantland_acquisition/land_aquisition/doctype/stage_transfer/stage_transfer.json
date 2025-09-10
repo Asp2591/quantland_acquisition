@@ -16,6 +16,10 @@
   "yojana_name",
   "section_break_bxtc",
   "date",
+  "column_break_scuu",
+  "current_stage",
+  "column_break_yzjv",
+  "new_stage",
   "section_break_ajbi",
   "stage_transfer_details"
  ],
@@ -40,6 +44,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "prastav_id.divison_id",
    "fieldname": "division_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -59,6 +64,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "division_id.yojana_id",
    "fieldname": "yojana_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -92,13 +98,33 @@
    "fieldtype": "Table",
    "label": "Stage Transfer Details",
    "options": "Stage Transfer Details"
+  },
+  {
+   "fieldname": "column_break_scuu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yzjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_stage",
+   "fieldtype": "Link",
+   "label": "Current Stage",
+   "options": "Stage"
+  },
+  {
+   "fieldname": "new_stage",
+   "fieldtype": "Link",
+   "label": "New Stage",
+   "options": "Stage"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-07 17:41:40.724539",
- "modified_by": "Administrator",
+ "modified": "2025-09-10 13:47:50.021820",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
  "naming_rule": "Expression (old style)",
