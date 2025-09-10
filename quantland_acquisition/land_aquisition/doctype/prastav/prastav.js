@@ -42,19 +42,19 @@ frappe.ui.form.on("Prastav Details", {
 });
 
 function calculate_area(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
+    let row = locals[cdt][cdn];
     frappe.model.set_value(cdt, cdn, "total_area", (row.cultivated_area || 0) + (row.waste_area || 0));
 }
 
 
 
 function land_price_by_factor(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
+    let row = locals[cdt][cdn];
     frappe.model.set_value(cdt, cdn, "land_price_by_factor", (row.factor || 0) * (row.value_of_acquired_land || 0));
 }
 
 function direct_purchase_by_private_nego(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
+    let row = locals[cdt][cdn];
     frappe.model.set_value(
         cdt, cdn,
         "property_valuation_direct_purchase",
@@ -63,7 +63,7 @@ function direct_purchase_by_private_nego(frm, cdt, cdn) {
 }
 
 function factor_plus_direct_purchase_amt(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
+    let row = locals[cdt][cdn];
     frappe.model.set_value(
         cdt, cdn,
         "factor_purchase_total",
@@ -71,7 +71,7 @@ function factor_plus_direct_purchase_amt(frm, cdt, cdn) {
     );
 }
 function total_relief_amt(frm, cdt, cdn) {
-    let row = frappe.get_doc(cdt, cdn);
+    let row = locals[cdt][cdn];
     frappe.model.set_value(
         cdt, cdn,
         "relief_amt",
@@ -79,7 +79,7 @@ function total_relief_amt(frm, cdt, cdn) {
     );
 }
 function grand_total_amt_calc(frm,cdt,cdn){
-    let row=frappe.get_doc(cdt,cdn);
+    let row=locals[cdt][cdn];
     frappe.model.set_value(
         cdt,cdn,
         "grand_total",
@@ -87,7 +87,7 @@ function grand_total_amt_calc(frm,cdt,cdn){
     )
 }
 function additional_perc_amt(frm,cdt,cdn){
-    let row=frappe.get_doc(cdt,cdn);
+    let row=locals[cdt][cdn];
     frappe.model.set_value(
         cdt,cdn,
         "additional_amount_25_by_govt",

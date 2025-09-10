@@ -94,14 +94,6 @@
    "label": "Primary Details"
   },
   {
-   "fetch_from": "prakalp_id.subdivision_id",
-   "fieldname": "subdivision_id",
-   "fieldtype": "Link",
-   "label": "Subdivision ID",
-   "options": "Subdivision",
-   "reqd": 1
-  },
-  {
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
@@ -138,7 +130,8 @@
    "fieldname": "prakalp_id",
    "fieldtype": "Link",
    "label": "Prakalp ID",
-   "options": "Prakalp"
+   "options": "Prakalp",
+   "reqd": 1
   },
   {
    "fetch_from": "prakalp_id.prakalp_name",
@@ -192,13 +185,20 @@
    "fieldname": "district_name",
    "fieldtype": "Data",
    "label": "District Name"
+  },
+  {
+   "fetch_from": "prakalp_id.subdivision_id",
+   "fieldname": "subdivision_id",
+   "fieldtype": "Link",
+   "label": "Subdivision ID",
+   "options": "Subdivision"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 14:16:27.794089",
- "modified_by": "Administrator",
+ "modified": "2025-09-10 13:08:34.464976",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Prastav",
  "naming_rule": "By fieldname",
