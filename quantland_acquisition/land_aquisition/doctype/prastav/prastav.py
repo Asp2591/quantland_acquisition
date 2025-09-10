@@ -67,7 +67,7 @@ class Prastav(Document):
             else:
                 doc = frappe.get_doc("Gut Details",gut_name)
                 
-                doc.name = gut_name
+                doc.gut_name = gut_name
                 doc.gut_number = gut_number
                 doc.village_name = village_name
                 doc.prastav_name = prastav_name
