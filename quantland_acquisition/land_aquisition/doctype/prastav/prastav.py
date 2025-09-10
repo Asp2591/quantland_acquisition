@@ -13,98 +13,58 @@ class Prastav(Document):
             gut_number = row.gut_number
             village_name = row.village_name
             village_id = row.village_id
-            prastav_name = self.prastav_name
-            subdivision_id=self.subdivision_id
-            division_id=self.divison_id
-            yojana_id=self.yojana_id
-            prastav_id=self.prastav_id
-            gut_name = f"{village_name}-{gut_number}-{prastav_name}"
 
             if not gut_number or not village_id:
                 continue
 
+            prastav_name = self.prastav_name
+            gut_name = f"{village_name}-{gut_number}-{prastav_name}"
+
+            doc_values = {
+                "gut_name": gut_name,
+                "gut_number": gut_number,
+                "village_name": village_name,
+                "village_id": village_id,
+                "prastav_name": prastav_name,
+                "subdivision_id": self.subdivision_id,
+                "division_id": self.divison_id,
+                "yojana_id": self.yojana_id,
+                "prastav_id": self.prastav_id,
+                "total_area": row.total_area or 0,
+                "affected_area": row.affected_area or 0,
+                "waste_area": row.waste_area or 0,
+                "aquisition_type": row.aquisition_type or "",
+                "landholder": row.landholder or "",
+                "land_type": row.land_type or "",
+                "group_number": row.group_number or "",
+                "cultivated_area": row.cultivated_area or 0,
+                "size_on_paper": row.size_on_paper or 0,
+                "hectare_size": row.hectare_size or 0,
+                "per_hectare_rate_by_district_level_committee": row.per_hectare_rate_by_district_level_committee or 0,
+                "value_of_acquired_land": row.value_of_acquired_land or 0,
+                "factor": row.factor or "",
+                "land_price_by_factor": row.land_price_by_factor or "",
+                "property_valuation_direct_purchase": row.property_valuation_direct_purchase or "",
+                "total_value_factor_and_direct_purchase": row.factor_purchase_total or "",
+                "relief_amt": row.relief_amt or "",
+                "grand_total": row.grand_total or "",
+                "additional_amt": row.additional_amount_25_by_govt or "",
+                "total_renumeration_amount": row.total_renumeration or "",
+                "total_amount_of_compensation": row.total_amount_of_compensation or "",
+                "trees": row.trees or "",
+                "houses": row.houses or "",
+                "others": row.others or "",
+                "well_pipeline": row.well_pipeline or "",
+                "deductible_amount": row.deductible_amount or ""
+            }
+
             if not frappe.db.exists("Gut Details", gut_name):
                 doc = frappe.new_doc("Gut Details")
-                
-                doc.gut_name = gut_name
-                doc.gut_number = gut_number
-                doc.village_name = village_name
-                doc.prastav_name = prastav_name
-                doc.subdivision_id=subdivision_id
-                doc.yojana_id=yojana_id
-                doc.division_id=division_id
-                doc.prastav_id=prastav_id
-                doc.total_area = row.total_area or 0
-                doc.affected_area = row.affected_area or 0
-                doc.waste_area = row.waste_area or 0
-                doc.aquisition_type = row.aquisition_type or ""
-                doc.landholder = row.landholder or ""
-                doc.land_type = row.land_type or ""
-                doc.group_number = row.group_number or ""
-                doc.cultivated_area = row.cultivated_area or 0
-                doc.size_on_paper = row.size_on_paper or 0
-                doc.hectare_size = row.hectare_size or 0
-                doc.per_hectare_rate_by_district_level_committee = row.per_hectare_rate_by_district_level_committee or 0
-                doc.value_of_acquired_land = row.value_of_acquired_land or 0
-                doc.factor = row.factor or ""
-                doc.land_price_by_factor = row.land_price_by_factor or ""
-                doc.property_valuation_direct_purchase = row.property_valuation_direct_purchase or ""
-                doc.total_value_factor_and_direct_purchase = row.factor_purchase_total or ""
-                doc.relief_amt = row.relief_amt or ""
-                doc.grand_total = row.grand_total or ""
-                doc.additional_amt = row.additional_amount_25_by_govt or ""
-                doc.total_renumeration_amount = row.total_renumeration or ""
-                doc.total_amount_of_compensation = row.total_amount_of_compensation or ""
-                doc.trees = row.trees or ""
-                doc.houses = row.houses or ""
-                doc.others = row.others or ""
-                doc.well_pipeline = row.well_pipeline or ""
-                doc.deductible_amount = row.deductible_amount or ""
-                doc.village_id = village_id
-
+                doc.update(doc_values)
                 doc.insert()
-                frappe.msgprint(f"Gut Details created: {gut_name}")
+                frappe.msgprint(f"Gut Details created: {gut_name}") 
             else:
-                doc = frappe.get_doc("Gut Details",gut_name)
-
-                doc.gut_number = gut_number
-                doc.village_name = village_name
-                doc.prastav_name = prastav_name
-                doc.gut_name = gut_name
-                doc.subdivision_id=subdivision_id
-                doc.yojana_id=yojana_id
-                doc.division_id=division_id
-                doc.prastav_id=prastav_id
-                doc.total_area = row.total_area or 0
-                doc.affected_area = row.affected_area or 0
-                doc.waste_area = row.waste_area or 0
-                doc.aquisition_type = row.aquisition_type or ""
-                doc.landholder = row.landholder or ""
-                doc.land_type = row.land_type or ""
-                doc.group_number = row.group_number or ""
-                doc.cultivated_area = row.cultivated_area or 0
-                doc.size_on_paper = row.size_on_paper or 0
-                doc.hectare_size = row.hectare_size or 0
-                doc.per_hectare_rate_by_district_level_committee = row.per_hectare_rate_by_district_level_committee or 0
-                doc.value_of_acquired_land = row.value_of_acquired_land or 0
-                doc.factor = row.factor or ""
-                doc.land_price_by_factor = row.land_price_by_factor or ""
-                doc.property_valuation_direct_purchase = row.property_valuation_direct_purchase or ""
-                doc.total_value_factor_and_direct_purchase = row.factor_purchase_total or ""
-                doc.relief_amt = row.relief_amt or ""
-                doc.grand_total = row.grand_total or ""
-                doc.additional_amt = row.additional_amount_25_by_govt or ""
-                doc.total_renumeration_amount = row.total_renumeration or ""
-                doc.total_amount_of_compensation = row.total_amount_of_compensation or ""
-                doc.trees = row.trees or ""
-                doc.houses = row.houses or ""
-                doc.others = row.others or ""
-                doc.well_pipeline = row.well_pipeline or ""
-                doc.deductible_amount = row.deductible_amount or ""
-                doc.village_id = village_id
-
+                doc = frappe.get_doc("Gut Details", gut_name)
+                doc.update(doc_values)
                 doc.save()
-                frappe.msgprint(f"Gut Details updated: {gut_name}")
-
-
-                
+                frappe.msgprint(f"Gut Details updated: {gut_name}") 
