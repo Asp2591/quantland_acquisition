@@ -1,14 +1,6 @@
 # Copyright (c) 2025, Quantbit Tech and contributors
 # For license information, please see license.txt
-import frappe
-from frappe.model.document import Document
 
-class Prastav(Document):
-    def before_save(self):
-        self.create_gut_doc()
-
-    # Copyright (c) 2025, Quantbit Tech and contributors
-# For license information, please see license.txt
 import frappe
 from frappe.model.document import Document
 
@@ -58,7 +50,6 @@ class Prastav(Document):
                 doc.value_of_acquired_land = row.value_of_acquired_land or 0
                 doc.factor = row.factor or ""
                 doc.land_price_by_factor = row.land_price_by_factor or ""
-                # doc.private_acquisition_area = row.private_acquisition_area or ""
                 doc.property_valuation_direct_purchase = row.property_valuation_direct_purchase or ""
                 doc.total_value_factor_and_direct_purchase = row.factor_purchase_total or ""
                 doc.relief_amt = row.relief_amt or ""
@@ -73,8 +64,8 @@ class Prastav(Document):
                 doc.deductible_amount = row.deductible_amount or ""
                 doc.village_id = village_id
 
-                # Insert the document into the database
-                doc.insert(ignore_permissions=True)
+                doc.insert()
+
                 frappe.db.commit()
 
                 frappe.msgprint(f"Gut Details created: {gut_name}")
@@ -82,5 +73,4 @@ class Prastav(Document):
                 frappe.msgprint(f"Gut Details already exists: {gut_name}")
 
 
-                doc.insert()
                 

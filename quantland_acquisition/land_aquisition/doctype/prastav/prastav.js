@@ -1,11 +1,7 @@
 // Copyright (c) 2025, Quantbit Tech and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Prastav", {
-// 	refresh(frm) {
 
-// 	},
-// });
 frappe.ui.form.on("Prastav", {
     upload_child_data: function(frm) {
         // handle CSV upload if needed
@@ -16,18 +12,7 @@ frappe.ui.form.on("Prastav", {
     prastav_id: function(frm) {
         fetch_prastav_details(frm);
     },
-    // after_save: function(frm) {
-    //     frm.doc.prastav_details.forEach(row => {
-    //         if (!row.gut_number || !row.village_id) return;
-    //         frappe.db.exists('Gut Details', row.gut_number).then(exists => {
-    //             if (!exists) {
-    //                 frappe.throw(`Gut Details created: ${row.gut_number}`);
-    //             } else {
-    //                 frappe.msgprint(`Gut Details already exists: ${row.gut_number}`);
-    //             }
-    //         });
-    //     });
-    // }
+    
 });
 
 frappe.ui.form.on("Prastav Details", {
@@ -131,23 +116,14 @@ function amount_of_compensation_calc(frm, cdt, cdn) {
 
 }
 function fetch_prastav_details(frm) {
-    if (!frm.doc.village_id || !frm.doc.prastav_id) {
+    if (!frm.doc.village_id) {
         return;
     }
 
-    frappe.db.get_doc('Prastav', frm.doc.prastav_id)
-    .then(prastav => {
-        if (prastav) {
-            // frm.set_value('division_id', prastav.division_id || '');
-            frm.set_value('subdivision_id', prastav.subdivision_id || '');
-            frm.set_value('yojana_id', prastav.yojana_id || '');
-        }
-    })
-    .catch(err => {
-        frappe.msgprint(__('Could not fetch Prastav details'));
-        console.error(err);
-    });
+    frm.set_value('subdivision_id', frm.doc.subdivision_id || '');
+    frm.set_value('yojana_id', frm.doc.yojana_id || '');
 }
+
 frappe.ui.form.on('Prastav', {
     village_id: function(frm) {
         if (!frm.doc.village_id) return;

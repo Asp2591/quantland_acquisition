@@ -154,15 +154,10 @@
    "read_only": 1
   },
   {
-   "fieldname": "prastav_id",
-   "fieldtype": "Link",
-   "label": "Prastav ID",
-   "options": "Prastav"
-  },
-  {
    "fetch_from": "prastav_id.prastav_name",
    "fieldname": "prastav_name",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Prastav Name",
    "read_only": 1
   },
@@ -221,11 +216,13 @@
   {
    "fieldname": "land_type",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Land Type"
   },
   {
    "fieldname": "gut_number",
    "fieldtype": "Int",
+   "in_standard_filter": 1,
    "label": "Gut Number"
   },
   {
@@ -236,6 +233,7 @@
   {
    "fieldname": "gut_name",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Gut Name ",
    "unique": 1
   },
@@ -530,15 +528,21 @@
   {
    "fieldname": "aquisition_type",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Aquisition Type",
    "options": "Acquisition Type"
+  },
+  {
+   "fieldname": "prastav_id",
+   "fieldtype": "Data",
+   "label": "Prastav ID"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 14:27:21.749166",
- "modified_by": "Administrator",
+ "modified": "2025-09-10 12:21:49.553205",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",
