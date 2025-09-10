@@ -529,7 +529,7 @@
   },
   {
    "fieldname": "aquisition_type",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Aquisition Type",
    "options": "Acquisition Type"
   }
@@ -537,7 +537,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 12:03:14.008913",
+ "modified": "2025-09-09 14:27:21.749166",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",

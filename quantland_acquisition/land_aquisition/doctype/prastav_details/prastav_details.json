@@ -59,7 +59,6 @@
    "fieldname": "village_id",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Village ID",
    "options": "Village"
   },
@@ -67,6 +66,7 @@
    "fetch_from": "village_id.village_name",
    "fieldname": "village_name",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Village Name",
    "read_only": 1
   },
@@ -75,25 +75,21 @@
    "fieldname": "total_area",
    "fieldtype": "Float",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Total Area",
    "precision": "0"
   },
   {
    "fieldname": "affected_area",
    "fieldtype": "Float",
+   "in_standard_filter": 1,
    "label": "Affected Area",
    "precision": "0"
   },
   {
-   "fieldname": "aquisition_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Aquisition Type",
-   "options": "1-Juna Kayda\n2-Navin Kayda\n3-Khajagi Vataghati"
-  },
-  {
    "fieldname": "landholder",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Landholder"
   },
   {
@@ -125,6 +121,7 @@
   {
    "fieldname": "group_number",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Group Number"
   },
   {
@@ -141,6 +138,7 @@
   {
    "fieldname": "total_amount_of_compensation",
    "fieldtype": "Float",
+   "in_standard_filter": 1,
    "label": "Total Amount of Compensation Payable",
    "precision": "0"
   },
@@ -183,12 +181,14 @@
   {
    "fieldname": "land_type",
    "fieldtype": "Select",
+   "in_standard_filter": 1,
    "label": "Land Type",
    "options": "\u0939\u0902\u0917\u093e\u092e\u0940\n\u092c\u093e\u0917\u093e\u092f\u0924\u0940\n\u091c\u093f\u0930\u093e\u092f\u0924\n\u0939\u0902\u0917\u093e\u092e\u0940 \u092c\u093e\u0917\u093e\u092f\u0924\u0940\n\u0939\u0902\u0917\u093e\u092e\u0940 \u091c\u093f\u0930\u093e\u092f\u0924\n\u092c\u093e\u0917\u093e\u092f\u0924\u0940 \u0924\u0941\u0930\u0940\n\u091c\u093f\u0930\u093e\u092f\u0924 \u0924\u0941\u0930\u0940"
   },
   {
    "fieldname": "size_on_paper",
    "fieldtype": "Float",
+   "in_standard_filter": 1,
    "label": "Size on 7/12",
    "precision": "0"
   },
@@ -231,6 +231,7 @@
   {
    "fieldname": "relief_amt",
    "fieldtype": "Float",
+   "in_standard_filter": 1,
    "label": "100% Relief Amount",
    "precision": "0"
   },
@@ -283,6 +284,7 @@
   {
    "fieldname": "gut_number",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Gut Number",
    "reqd": 1
   },
@@ -308,13 +310,20 @@
    "fieldtype": "Float",
    "label": "Land Price by Factor",
    "precision": "0"
+  },
+  {
+   "fieldname": "aquisition_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Aquisition Type",
+   "options": "Acquisition Type"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-09 11:23:58.777020",
+ "modified": "2025-09-09 14:26:07.029284",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",
