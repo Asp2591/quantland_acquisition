@@ -3,9 +3,7 @@
 
 
 frappe.ui.form.on("Prastav", {
-    upload_child_data: function(frm) {
-        // handle CSV upload if needed
-    },
+    
     village_id: function(frm) {
         fetch_prastav_details(frm);
     },
