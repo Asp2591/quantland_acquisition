@@ -133,6 +133,15 @@ frappe.ui.form.on('Prastav', {
         });
 
         frm.refresh_field('prastav_details');
+    },
+       village_name: function(frm) {
+        if (!frm.doc.village_id) return;
+
+        frm.doc.prastav_details.forEach(row => {
+            frappe.model.set_value(row.doctype, row.name, 'village_name', frm.doc.village_id);
+        });
+
+        frm.refresh_field('prastav_details');
     }
 });
 
