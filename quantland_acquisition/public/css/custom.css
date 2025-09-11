@@ -152,16 +152,17 @@ body.login {
 }
 
 .login-content.page-card {
-    background: rgba(48, 45, 45, 0.95) !important;
+    background: rgba(13, 14, 13, 0.432) !important;
     border-radius: 15px !important;
     padding: 40px !important;
     box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
 }
 
-.login-content .app-logo {
-    width: 80px !important;
-    margin-bottom: 15px;
+.forgot-password-message a {
+    color: #ffff !important;
+    text-decoration: underline; /* optional */
 }
+
 
 .login-content .app-title {
     font-family: "Poppins", sans-serif;

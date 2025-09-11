@@ -25,10 +25,8 @@ frappe.ui.form.on("Prastav", {
         });
         frm.refresh_field('prastav_details');
     },
-    // refresh: function(frm) {
-    //     frm.fields_dict['prastav_details'].grid.get_field('amount').get_query = function(doc, cdt, cdn) {};
-    //     set_child_readonly(frm);
-    // }
+    
+
     
 });
 
@@ -57,9 +55,22 @@ frappe.ui.form.on("Prastav Details", {
     deductible_amount: amount_of_compensation_calc,
     total_renumeration: amount_of_compensation_calc,
    
-    // landholder_type: function(frm, cdt, cdn) {
-    //     set_child_readonly(frm);
-    // }
+    landholder_type: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        if(row.landholder_type === "1") {
+            if(row.najarana_amount !== "Not Applicable") {
+                frappe.model.set_value(cdt, cdn, "najarana_amount", "Not Applicable");
+            }
+            frm.set_df_property("najarana_amount", "read_only", 1, row.name);
+        } else if(row.landholder_type === "2") {
+            if(row.najarana_amount === "Not Applicable") {
+                frappe.model.set_value(cdt, cdn, "najarana_amount", 0);
+            }
+            frm.set_df_property("najarana_amount", "read_only", 1, row.name);
+        }
+    }
+
+
 });
 
 function calculate_area(frm, cdt, cdn) {

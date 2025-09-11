@@ -10,6 +10,8 @@
   "prastav_section",
   "column_break_ajtz",
   "date",
+  "column_break_mvnx",
+  "status",
   "primary_details_section",
   "prastav_id",
   "prastav_name",
@@ -192,12 +194,25 @@
    "fieldtype": "Link",
    "label": "Subdivision ID",
    "options": "Subdivision"
+  },
+  {
+   "fieldname": "column_break_mvnx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nDeactive"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 13:08:34.464976",
+ "modified": "2025-09-11 14:10:12.152631",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",

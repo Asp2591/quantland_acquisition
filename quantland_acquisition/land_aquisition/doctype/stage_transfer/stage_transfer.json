@@ -8,6 +8,7 @@
  "field_order": [
   "prastav_id",
   "prastav_name",
+  "gut_name",
   "column_break_sluf",
   "division_id",
   "division_name",
@@ -129,13 +130,19 @@
   {
    "fieldname": "column_break_xhqi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gut_name",
+   "fieldtype": "Link",
+   "label": "Gut Name",
+   "options": "Gut Details"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-10 16:53:39.470611",
- "modified_by": "atharvapatkar@erpdata.in",
+ "modified": "2025-09-11 11:29:34.158229",
+ "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
  "naming_rule": "Expression (old style)",

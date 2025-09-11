@@ -10,10 +10,12 @@
   "tehsil_id",
   "column_break_vuxc",
   "tehsil_name",
+  "tehsil_english",
   "column_break_zxia",
   "district_id",
   "column_break_tvvo",
-  "district_name"
+  "district_name",
+  "districtenglish"
  ],
  "fields": [
   {
@@ -57,12 +59,22 @@
   {
    "fieldname": "column_break_tvvo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tehsil_english",
+   "fieldtype": "Data",
+   "label": "Tehsil (English)"
+  },
+  {
+   "fieldname": "districtenglish",
+   "fieldtype": "Data",
+   "label": "District (English)"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-09 11:34:20.523609",
+ "modified": "2025-09-10 23:09:52.250740",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Tehsil",

@@ -34,13 +34,13 @@ frappe.ui.form.on('Gut Details', {
         append_stage_history(frm);
     },
     onload: function(frm) {
-        frm.set_df_property("attach", "hidden", 1);
+        frm.set_df_property("after_purchase_attach", "hidden", 1);
     },
     purchase_deed: function(frm) {
         if(frm.doc.purchase_deed === "Available") {
-            frm.set_df_property("attach", "hidden", 0); 
+            frm.set_df_property("after_purchase_attach", "hidden", 0); 
         } else {
-            frm.set_df_property("attach", "hidden", 1);
+            frm.set_df_property("after_purchase_attach", "hidden", 1);
         }
     }
 });

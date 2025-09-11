@@ -55,7 +55,10 @@ class Prastav(Document):
                 "houses": row.houses or "",
                 "others": row.others or "",
                 "well_pipeline": row.well_pipeline or "",
-                "deductible_amount": row.deductible_amount or ""
+                "deductible_amount": row.deductible_amount or "",
+                "landholder_type":row.landholder_type or "",
+                "najarana_amount":row.najarana_amount or ""
+
             }
 
             if not frappe.db.exists("Gut Details", gut_name):

@@ -3,8 +3,10 @@ frappe.query_reports["Kanthi Vibhag 1 Valuation Report"] = {
         { "fieldname": "village_id", "label": __("गाव"), "fieldtype": "Link", "options": "Village" },
         { "fieldname": "tehsil_id", "label": __("तालुका"), "fieldtype": "Link", "options": "Tehsil" },
         { "fieldname": "gut_number", "label": __("गट क्रमांक"), "fieldtype": "Link", "options": "Gut Details" },
-        { "fieldname": "aquisition_type", "label": __("संपादनाचा प्रकार"), "fieldtype": "Link","options":"Acquisition Type" },
-        { "fieldname": "date", "label": __("तारीख"), "fieldtype": "Date" }
+        { "fieldname": "gut_name", "label": __("गट नाव"), "fieldtype": "Data" },
+        { "fieldname": "aquisition_type", "label": __("संपादनाचा प्रकार"), "fieldtype": "Link", "options":"Acquisition Type" },
+        { "fieldname": "date", "label": __("तारीख"), "fieldtype": "Date" },
+        { "fieldname": "status", "label": __("Status"), "fieldtype": "Select", "options": "Active\nDeactive", "default": "Active" }
     ],
 
     onload: function(report) {

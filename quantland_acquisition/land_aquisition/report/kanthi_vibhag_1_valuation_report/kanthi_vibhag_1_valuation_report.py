@@ -1,115 +1,111 @@
 # Copyright (c) 2025, Quantbit Tech and contributors
 # For license information, please see license.txt
-
 import frappe
-from frappe import _
-from frappe.utils.jinja import render_template
 from frappe import _
 import json
 
 def execute(filters=None):
     columns = get_columns()
     data = get_data(filters)
-    
     return columns, data
+
 @frappe.whitelist()
 def get_print_html(filters):
-    import json
-
     if isinstance(filters, str):
         filters = frappe._dict(json.loads(filters))
     else:
         filters = frappe._dict(filters)
 
     columns, data = execute(filters)
-    last_columns = columns[-30:]
 
-    filter_labels = [
-        {"fieldname": "village_id", "label": "गाव"},
-        {"fieldname": "tehsil_id", "label": "तालुका"},
-        {"fieldname": "gut_number", "label": "गट क्रमांक"},
-        {"fieldname": "aquisition_type", "label": "संपादनाचा प्रकार"},
-        {"fieldname": "date", "label": "तारीख"},
+    print_columns = [
+        {"label": _("जमिनदाराचे नाव"), "fieldname": "landholder"},
+        {"label": _("गट क्रमांक"), "fieldname": "gut_number"},
+        {"label": _("शेतीसाठी क्षेत्रफळ"), "fieldname": "cultivated_area"},
+        {"label": _("पोट खराब"), "fieldname": "waste_area"},
+        {"label": _("एकूण क्षेत्रफळ"), "fieldname": "total_area"},
+        {"label": _("जमिनीची प्रतवारी"), "fieldname": "land_type"},
+        {"label": _("ग्रुप क्रमांक"), "fieldname": "group_number"},
+        {"label": _("७/१२ नुसार आकार"), "fieldname": "size_on_paper"},
+        {"label": _("हेक्टेअर आकार"), "fieldname": "hectare_size"},
+        {"label": _("जिल्हा स्तर समितीद्वारे हेक्टेअर दर"), "fieldname": "per_hectare_rate_by_district_level_committee"},
+        {"label": _("संपादन करावयाचे क्षेत्र"), "fieldname": "affected_area"},
+        {"label": _("संपादित जमिनीचे मूल्य"), "fieldname": "value_of_acquired_land"},
+        {"label": _("गुणक"), "fieldname": "factor"},
+        {"label": _("गुणकाद्वारे जमीन किंमत"), "fieldname": "land_price_by_factor"},
+        {"label": _("झाडांवरील मूल्यांकन"), "fieldname": "trees"},
+        {"label": _("विहीर/पाइपलाइनवरील मूल्यांकन"), "fieldname": "well_pipeline"},
+        {"label": _("घरांवरील मूल्यांकन"), "fieldname": "houses"},
+        {"label": _("इतर मूल्यांकन"), "fieldname": "others"},
+        {"label": _("मालमत्तेचे मूल्यांकन (थेट खरेदी)"), "fieldname": "property_valuation_direct_purchase"},
+        {"label": _("एकूण मूल्य (गुणक व थेट खरेदी)"), "fieldname": "factor_purchase_total"},
+        {"label": _("१००% सवलत रक्कम"), "fieldname": "relief_amt"},
+        {"label": _("एकूण रक्कम"), "fieldname": "grand_total"},
+        {"label": _("अतिरिक्त रक्कम (२५%) शासनाद्वारे"), "fieldname": "additional_amount_25_by_govt"},
+        {"label": _("एकूण मोबदला रक्कम"), "fieldname": "total_renumeration"},
+        {"label": _("वजावट रक्कम"), "fieldname": "deductible_amount"},
+        {"label": _("मोबदला देय रक्कम"), "fieldname": "total_amount_of_compensation"},
+        {"label": _("शेरा"), "fieldname": "remark"},
     ]
 
     html = """
 <html>
-    <head>
-        <title>कंठी विभाग १ मूल्यांकन अहवाल</title>
-        <style>
-            @page { margin: 0; }
-            body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-            h2 { text-align: center; margin: 10px 0; }
-            .sub-header { text-align: center; margin: 5px 0; font-weight: bold; font-size: 12px; }
-            table { width: 100%; border-collapse: collapse; font-size: 11px; margin: 0; }
-            th, td { border: 1px solid #000; padding: 4px; text-align: center; vertical-align: top; }
-            th { background-color: #f0f0f0; white-space: normal; word-wrap: break-word; }
-            td { white-space: normal; word-wrap: break-word; }
-            .filters-inline { margin-bottom: 10px; width: 100%; font-size: 12px; }
-            .filters-inline p { margin: 2px 0; text-align: left; }
-            .filters-inline strong { display: inline-block; width: 150px; }
-        </style>
-    </head>
-    <body>
-        <h2>कंठी विभाग १ मूल्यांकन अहवाल</h2>
-        <div class="sub-header">
-            मौजे कंठी ता. जत येथिल जमिन खजागी वाटघाटी द्वारे खरेदी करणेकामी निश्चित कर्नेत आलेला मुल्यंकन तक्ता<br>
-            प्रयोजन जात कळवा की.मी. 35 ते की.मी. 39, मौजे कंठी (भाग-1), मौजे कंठी, ता. जात, जी. सांगली<br>
-            मोबदला निश्चितीसाठी जिल्हास्तरीय समितीचा बैठकीचा दिनांक
-        </div>
-        <div class='filters-inline'>
+<head>
+    <title>कंठी विभाग १ मूल्यांकन अहवाल</title>
+    <style>
+        @page { margin: 0; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        h2 { text-align: center; margin: 10px 0; }
+        .sub-header { text-align: center; margin: 5px 0; font-weight: bold; font-size: 12px; }
+        table { width: 100%; border-collapse: collapse; font-size: 11px; margin: 0; }
+        th, td { border: 1px solid #000; padding: 4px; text-align: center; vertical-align: top; }
+        th { background-color: #f0f0f0; white-space: normal; word-wrap: break-word; }
+        td { white-space: normal; word-wrap: break-word; }
+        .filters-inline { margin-bottom: 10px; width: 100%; font-size: 12px; }
+        .filters-inline strong { display: inline-block; width: 150px; }
+    </style>
+</head>
+<body>
+<h2>कंठी विभाग १ मूल्यांकन अहवाल</h2>
+<div class="sub-header">
+मौजे कंठी ता. जत येथिल जमिन खजागी वाटघाटी द्वारे खरेदी करणेकामी निश्चित कर्नेत आलेला मुल्यंकन तक्ता<br>
+प्रयोजन जात कळवा की.मी. 35 ते की.मी. 39, मौजे कंठी (भाग-1), मौजे कंठी, ता. जात, जी. सांगली<br>
+मोबदला निश्चितीसाठी जिल्हास्तरीय समितीचा बैठकीचा दिनांक
+</div>
 """
 
-    # Left-aligned filters
-    html += "<div class='filters-inline' style='margin-bottom:10px; font-size:12px; text-align:left;'>"
-
-    for f in filter_labels:
-        value = filters.get(f["fieldname"], "")
-        html += f"<span style='margin-right:20px;'><strong>{f['label']}:</strong>{value}</span>"
-
-    html += "</div>"
-
-
-    # Data table
     html += "<table><tr>"
-    for col in last_columns:
+    for col in print_columns:
         html += f"<th>{col['label']}</th>"
     html += "</tr>"
 
     for row in data:
-        last_row_values = row[-30:]
         html += "<tr>"
-        for val in last_row_values:
-            html += f"<td>{val}</td>"
+        for col in print_columns:
+            html += f"<td>{row.get(col['fieldname'], '')}</td>"
         html += "</tr>"
 
     html += """
-        </table>
-
-        <br><br><br>
-        <div style="display: flex; justify-content: space-between; margin-top: 50px; width: 100%;">
-            <div style="text-align: center;">
-                ___________________<br>
-                उपविभागीय अभियंता
-            </div>
-            <div style="text-align: center;">
-                ___________________<br>
-                कार्यकारी अभियंता
-            </div>
-            <div style="text-align: center;">
-                ___________________<br>
-                उपविभागीय अधिकारी
-            </div>
-        </div>
-
-    </body>
+</table>
+<br><br><br>
+<div style="display: flex; justify-content: space-between; margin-top: 50px; width: 90%; margin-left:5%">
+    <div style="text-align: center;">
+        ___________________<br>
+        उपविभागीय अभियंता
+    </div>
+    <div style="text-align: center;">
+        ___________________<br>
+        कार्यकारी अभियंता
+    </div>
+    <div style="text-align: center;">
+        ___________________<br>
+        उपविभागीय अधिकारी
+    </div>
+</div>
+</body>
 </html>
-    """
-
+"""
     return html
-
-
-
 
 def get_columns():
     return [
@@ -119,9 +115,10 @@ def get_columns():
         {"label": _("जिल्ह्याचे नाव"), "fieldname": "district_name", "fieldtype": "Data"},
         {"label": _("जमिनदाराचे नाव"), "fieldname": "landholder", "fieldtype": "Data"},
         {"label": _("गट क्रमांक"), "fieldname": "gut_number", "fieldtype": "Int"},
+        {"label": _("गट नाव"), "fieldname": "gut_name", "fieldtype": "Link","options":"Gut Details"},
         {"label": _("ग्रुप क्रमांक"), "fieldname": "group_number", "fieldtype": "Data"},
         {"label": _("७/१२ नोंद"), "fieldname": "record", "fieldtype": "Data"},
-        {"label": _("संपादनाचा प्रकार"), "fieldname": "aquisition_type", "fieldtype": "Link","options":"Acquisition Type"},
+        {"label": _("संपादनाचा प्रकार"), "fieldname": "aquisition_type", "fieldtype": "Data"},
         {"label": _("एकूण क्षेत्रफळ"), "fieldname": "total_area", "fieldtype": "Int"},
         {"label": _("शेतीसाठी क्षेत्रफळ"), "fieldname": "cultivated_area", "fieldtype": "Int"},
         {"label": _("पोट खराब"), "fieldname": "waste_area", "fieldtype": "Int"},
@@ -149,32 +146,31 @@ def get_columns():
         {"label": _("शेरा"), "fieldname": "remark", "fieldtype": "Text"},
     ]
 
-
-
-
-
 def get_data(filters):
-    """Return data for the report from child table with Village → Tehsil → District names."""
     data = []
-    conditions = "c.parentfield = 'prastav_details'"
-    values = {}
+
+    # Only include children of Active/Deactive parents based on filter
+    status_filter = filters.get("status") or "Active"  # default Active if not selected
+    conditions = "c.parentfield = 'prastav_details' AND p.status = %(status)s"
+    values = {"status": status_filter}
+
+    computed_gut_name = "CONCAT(IFNULL(v.village_name, ''), '-', IFNULL(c.gut_number, ''), '-', IFNULL(p.prastav_name, ''))"
 
     if filters.get("village_id"):
         conditions += " AND c.village_id = %(village_id)s"
         values["village_id"] = filters["village_id"]
-
     if filters.get("tehsil_id"):
         conditions += " AND t.name = %(tehsil_id)s"
         values["tehsil_id"] = filters["tehsil_id"]
-
     if filters.get("gut_number"):
         conditions += " AND c.gut_number LIKE %(gut_number)s"
         values["gut_number"] = "%" + filters["gut_number"] + "%"
-
     if filters.get("aquisition_type"):
         conditions += " AND c.aquisition_type LIKE %(aquisition_type)s"
         values["aquisition_type"] = "%" + filters["aquisition_type"] + "%"
-
+    if filters.get("gut_name"):
+        conditions += f" AND {computed_gut_name} LIKE %(gut_name)s"
+        values["gut_name"] = "%" + filters["gut_name"] + "%"
     if filters.get("date"):
         conditions += " AND p.date = %(date)s"
         values["date"] = filters["date"]
@@ -182,6 +178,7 @@ def get_data(filters):
     rows = frappe.db.sql(f"""
         SELECT
             p.name AS parent_docname,
+            p.prastav_name AS prastav_name,
             v.village_name,
             t.tehsil_name,
             d.district_name,
@@ -225,43 +222,43 @@ def get_data(filters):
     """, values=values, as_dict=True)
 
     for r in rows:
-    
-        data.append([
-            r.parent_docname,
-            r.village_name or '',
-            r.tehsil_name or '',
-            r.district_name or '',
-            r.landholder or '',
-            r.gut_number or 0,
-            r.group_number or '',
-            r.record or '',
-            r.aquisition_type or '',
-            int(r.total_area or 0),
-            int(r.cultivated_area or 0),
-            int(r.waste_area or 0),
-            int(r.affected_area or 0),
-            r.size_on_paper or '',
-            int(r.hectare_size or 0),
-            r.land_type or '',
-            int(r.per_hectare_rate_by_district_level_committee or 0),
-            int(r.value_of_acquired_land or 0),
-            r.factor or 0,
-            int(r.land_price_by_factor or 0),
-            int(r.trees or 0),
-            int(r.well_pipeline or 0),
-            int(r.houses or 0),
-            int(r.others or 0),
-            int(r.property_valuation_direct_purchase or 0),
-            int(r.factor_purchase_total or 0),
-            int(r.relief_amt or 0),
-            int(r.grand_total or 0),
-            int(r.additional_amount_25_by_govt or 0),
-            int(r.total_renumeration or 0),
-            int(r.deductible_amount or 0),
-            int(r.total_amount_of_compensation or 0),
-            r.date or '',
-            r.remark or ''
-        ])
-
+        data.append({
+            "parent_docname": r.parent_docname,
+            "prastav_name": r.prastav_name,
+            "village_name": r.village_name,
+            "tehsil_name": r.tehsil_name,
+            "district_name": r.district_name,
+            "landholder": r.landholder,
+            "gut_number": r.gut_number,
+            "gut_name": f"{r.village_name or ''}-{r.gut_number or ''}-{r.prastav_name or ''}",
+            "group_number": r.group_number,
+            "record": r.record,
+            "aquisition_type": r.aquisition_type,
+            "total_area": r.total_area,
+            "cultivated_area": r.cultivated_area,
+            "waste_area": r.waste_area,
+            "affected_area": r.affected_area,
+            "size_on_paper": r.size_on_paper,
+            "hectare_size": r.hectare_size,
+            "land_type": r.land_type,
+            "per_hectare_rate_by_district_level_committee": r.per_hectare_rate_by_district_level_committee,
+            "value_of_acquired_land": r.value_of_acquired_land,
+            "factor": r.factor,
+            "land_price_by_factor": r.land_price_by_factor,
+            "trees": r.trees,
+            "well_pipeline": r.well_pipeline,
+            "houses": r.houses,
+            "others": r.others,
+            "property_valuation_direct_purchase": r.property_valuation_direct_purchase,
+            "factor_purchase_total": r.factor_purchase_total,
+            "relief_amt": r.relief_amt,
+            "grand_total": r.grand_total,
+            "additional_amount_25_by_govt": r.additional_amount_25_by_govt,
+            "total_renumeration": r.total_renumeration,
+            "deductible_amount": r.deductible_amount,
+            "total_amount_of_compensation": r.total_amount_of_compensation,
+            "date": r.date,
+            "remark": r.remark
+        })
 
     return data

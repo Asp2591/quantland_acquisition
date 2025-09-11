@@ -21,6 +21,17 @@ frappe.ui.form.on('Stage Transfer', {
         });
         frm.refresh_field('stage_transfer_details');
     },
+    gut_name: function(frm) {
+    if (!frm.doc.gut_name) return;
+
+    frappe.db.get_value("Gut Details", frm.doc.gut_name, "current_stage")
+        .then(r => {
+            if (r && r.message) {
+                frm.set_value("new_stage", r.message.current_stage);
+                console.log("current_stage:", r.message.current_stage, "new_stage:", frm.doc.new_stage);
+            }
+        });
+    }
 });
 
 frappe.ui.form.on('Stage Transfer Details', {
