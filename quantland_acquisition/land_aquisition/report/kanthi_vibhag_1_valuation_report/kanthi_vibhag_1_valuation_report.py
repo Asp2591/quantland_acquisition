@@ -11,6 +11,9 @@ def execute(filters=None):
 
 @frappe.whitelist()
 def get_print_html(filters):
+    import json
+    from frappe import _
+
     if isinstance(filters, str):
         filters = frappe._dict(json.loads(filters))
     else:
@@ -48,6 +51,14 @@ def get_print_html(filters):
         {"label": _("शेरा"), "fieldname": "remark"},
     ]
 
+    filter_labels = [
+        {"fieldname": "village_id", "label": _("गाव")},
+        {"fieldname": "tehsil_id", "label": _("तालुका")},
+        {"fieldname": "gut_number", "label": _("गट क्रमांक")},
+        {"fieldname": "aquisition_type", "label": _("संपादनाचा प्रकार")},
+        {"fieldname": "date", "label": _("तारीख")},
+    ]
+
     html = """
 <html>
 <head>
@@ -61,8 +72,9 @@ def get_print_html(filters):
         th, td { border: 1px solid #000; padding: 4px; text-align: center; vertical-align: top; }
         th { background-color: #f0f0f0; white-space: normal; word-wrap: break-word; }
         td { white-space: normal; word-wrap: break-word; }
-        .filters-inline { margin-bottom: 10px; width: 100%; font-size: 12px; }
-        .filters-inline strong { display: inline-block; width: 150px; }
+        .filters-inline { font-size: 13px; display: inline-flex; gap: 200px; flex-wrap: wrap; margin-bottom: 10px;margin-left: 10px; }
+        .filters-inline span { white-space: nowrap; }
+        .filters-inline strong { margin-right: 5px; }
     </style>
 </head>
 <body>
@@ -72,7 +84,14 @@ def get_print_html(filters):
 प्रयोजन जात कळवा की.मी. 35 ते की.मी. 39, मौजे कंठी (भाग-1), मौजे कंठी, ता. जात, जी. सांगली<br>
 मोबदला निश्चितीसाठी जिल्हास्तरीय समितीचा बैठकीचा दिनांक
 </div>
+<div class='filters-inline'>
 """
+
+    for f in filter_labels:
+        value = filters.get(f["fieldname"], "")
+        html += f"<span><strong>{f['label']}:</strong> {value}</span>"
+
+    html += "</div>"
 
     html += "<table><tr>"
     for col in print_columns:
@@ -106,6 +125,7 @@ def get_print_html(filters):
 </html>
 """
     return html
+
 
 def get_columns():
     return [
