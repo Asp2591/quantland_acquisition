@@ -59,18 +59,15 @@ frappe.ui.form.on("Prastav Details", {
         let row = locals[cdt][cdn];
 
         if (row.landholder_type === "1") {
-            frappe.model.set_value(cdt, cdn, "najarana_amount", "Not Applicable");
+            frappe.model.set_value(cdt, cdn, "najarana_amount", "");
             frm.set_df_property("najarana_amount", "hidden", 1, row.name);
         } else if (row.landholder_type === "2") {
-            if(row.najarana_amount === "Not Applicable") {
-                frappe.model.set_value(cdt, cdn, "najarana_amount", 0);
-            }
             frm.set_df_property("najarana_amount", "hidden", 0, row.name);
             frm.set_df_property("najarana_amount", "read_only", 0, row.name);
         }
+
+        frm.refresh_field("prastav_details");
     }
-
-
 
 });
 
