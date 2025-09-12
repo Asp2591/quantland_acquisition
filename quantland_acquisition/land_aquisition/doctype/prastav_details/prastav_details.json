@@ -12,17 +12,17 @@
   "land_details_section",
   "gut_number",
   "cultivated_area",
+  "hectare_size",
   "land_type",
   "column_break_pzwh",
   "landholder",
   "waste_area",
+  "size_on_paper",
   "group_number",
-  "hectare_size",
   "column_break_kiyg",
   "landholder_type",
   "total_area",
   "record",
-  "size_on_paper",
   "column_break_azhg",
   "najarana_amount",
   "affected_area",
@@ -339,23 +339,25 @@
    "fieldname": "landholder_type",
    "fieldtype": "Select",
    "label": "Landholder Type",
-   "options": "1\n2"
+   "options": "2\n1"
   },
   {
    "fieldname": "column_break_pzwh",
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "najarana_amount",
    "fieldtype": "Float",
-   "label": "Najarana Amount"
+   "label": "Najarana Amount",
+   "precision": "0"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-11 15:33:09.088825",
+ "modified": "2025-09-12 12:34:06.881432",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",

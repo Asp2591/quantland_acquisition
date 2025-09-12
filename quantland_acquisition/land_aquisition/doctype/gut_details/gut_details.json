@@ -30,15 +30,15 @@
   "gut_details_section",
   "column_break_csgw",
   "gut_number",
-  "srno",
-  "column_break_pryb",
-  "current_stage",
   "mb_number",
-  "column_break_inpu",
-  "stage_date",
+  "column_break_pryb",
+  "srno",
   "page_number",
-  "column_break_zfex",
+  "column_break_inpu",
+  "current_stage",
   "gut_name",
+  "column_break_zfex",
+  "stage_date",
   "land_details_section",
   "landholder",
   "aquisition_type",
@@ -87,16 +87,16 @@
   "najarana_amount",
   "payemnt_details_section",
   "payment_amount",
-  "column_break_cxcu",
+  "column_break_wdsb",
   "payment_remarks",
-  "prastav_attach",
-  "column_break_buzg",
+  "column_break_cxcu",
   "date",
-  "column_break_hutw",
+  "column_break_buzg",
   "purchase_deed",
-  "after_purchase_attach",
-  "column_break_huku",
+  "column_break_qjir",
   "purchase_deed_date",
+  "column_break_hutw",
+  "after_purchase_attach",
   "section_break_nbyg",
   "stage_history",
   "section_break_tled",
@@ -316,10 +316,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_huku",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_qhzp",
    "fieldtype": "Column Break"
   },
@@ -526,10 +522,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Not Available",
    "fieldname": "purchase_deed",
    "fieldtype": "Select",
    "label": "Purchase Deed",
-   "options": "Available\nNot Available"
+   "options": "Not Available\nAvailable"
   },
   {
    "fieldname": "aquisition_type",
@@ -587,15 +584,9 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "prastav_attach",
-   "fieldtype": "Attach",
-   "label": "7/12 On Prastav"
-  },
-  {
    "fieldname": "landholder_type",
-   "fieldtype": "Select",
-   "label": "Landholder Type",
-   "options": "1\n2"
+   "fieldtype": "Data",
+   "label": "Landholder Type"
   },
   {
    "fieldname": "najarana_amount",
@@ -616,12 +607,20 @@
   {
    "fieldname": "section_break_anmy",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wdsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qjir",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-11 15:34:27.026013",
+ "modified": "2025-09-12 12:39:47.024443",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",

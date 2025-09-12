@@ -57,7 +57,7 @@ class Prastav(Document):
                 "well_pipeline": row.well_pipeline or "",
                 "deductible_amount": row.deductible_amount or "",
                 "landholder_type":row.landholder_type or "",
-                "najarana_amount":row.najarana_amount or ""
+                "najarana_amount":row.najarana_amount or "Not Applicable"
 
             }
 
@@ -65,9 +65,9 @@ class Prastav(Document):
                 doc = frappe.new_doc("Gut Details")
                 doc.update(doc_values)
                 doc.insert()
-                frappe.msgprint(f"Gut Details created: {gut_name}") 
+                frappe.msgprint(f"नवीन गट तपशील तयार झाला: {gut_name}") 
             else:
                 doc = frappe.get_doc("Gut Details", gut_name)
                 doc.update(doc_values)
                 doc.save()
-                frappe.msgprint(f"Gut Details updated: {gut_name}") 
+                frappe.msgprint(f"गट तपशील अपडेटेड: {gut_name}") 

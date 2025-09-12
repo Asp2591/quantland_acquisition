@@ -30,17 +30,18 @@ frappe.ui.form.on('Gut Details', {
     stage_date: function(frm) {
         append_stage_history(frm);
     },
-    srno: function(frm) {
+    before_save: function(frm) {
         append_stage_history(frm);
     },
+  
     onload: function(frm) {
-        frm.set_df_property("prastav_attach", "hidden", 1);
+        frm.set_df_property("after_purchase_attach", "hidden", 1);
     },
     purchase_deed: function(frm) {
-        if(frm.doc.purchase_deed === "Available") {
-            frm.set_df_property("prastav_attach", "hidden", 0); 
+        if(frm.doc.purchase_deed === "Not Available") {
+            frm.set_df_property("after_purchase_attach", "hidden", 1); 
         } else {
-            frm.set_df_property("prastav_attach", "hidden", 1);
+            frm.set_df_property("after_purchase_attach", "hidden", 0);
         }
     }
 });
@@ -104,15 +105,33 @@ async function set_gut_names(frm) {
         frm.set_value("gut_name", `${village_name}-${gut_number}-${prastav_name}`);
     }
 }
+    
+
 function append_stage_history(frm) {
-    if (frm.doc.current_stage && frm.doc.stage_date && frm.doc.srno) {
+    if (!frm.doc.current_stage || !frm.doc.stage_date || !frm.doc.srno) return;
+
+    let history = frm.doc.stage_history || [];
+    let last_row = history.length ? history[history.length - 1] : null;
+
+    if (!last_row) {
         let new_row = frm.add_child('stage_history');
         new_row.current_stage = frm.doc.current_stage;
         new_row.date = frm.doc.stage_date;
         new_row.srno = frm.doc.srno;
-
         frm.refresh_field('stage_history');
+        return;
+    }
 
-        
+    if (
+        last_row.current_stage == frm.doc.current_stage ||
+        last_row.date == frm.doc.stage_date ||
+        last_row.srno == frm.doc.srno
+    ) {
+        let new_row = frm.add_child('stage_history');
+        new_row.current_stage = frm.doc.current_stage;
+        new_row.date = frm.doc.stage_date;
+        new_row.srno = frm.doc.srno;
+        frm.refresh_field('stage_history');
     }
 }
+

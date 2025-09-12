@@ -54,19 +54,20 @@ frappe.ui.form.on("Prastav Details", {
 
     deductible_amount: amount_of_compensation_calc,
     total_renumeration: amount_of_compensation_calc,
-   
+
     landholder_type: function(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
+        let grid_row = frm.fields_dict["prastav_details"].grid.grid_rows_by_docname[row.name];
 
         if (row.landholder_type === "1") {
             frappe.model.set_value(cdt, cdn, "najarana_amount", "");
-            frm.set_df_property("najarana_amount", "hidden", 1, row.name);
+            grid_row.toggle_display("najarana_amount", false);
+            grid_row.set_read_only("najarana_amount", true);
         } else if (row.landholder_type === "2") {
-            frm.set_df_property("najarana_amount", "hidden", 0, row.name);
-            frm.set_df_property("najarana_amount", "read_only", 0, row.name);
+            frappe.model.set_value(cdt, cdn, "najarana_amount", 0);
+            grid_row.toggle_display("najarana_amount", true);
+            grid_row.set_read_only("najarana_amount", false);
         }
-
-        frm.refresh_field("prastav_details");
     }
 
 });
@@ -133,15 +134,3 @@ function fetch_prastav_details(frm) {
     frm.set_value('subdivision_id', frm.doc.subdivision_id || '');
     frm.set_value('yojana_id', frm.doc.yojana_id || '');
 }
-// function set_child_readonly(frm) {
-//     frm.doc.prastav_details.forEach(function(row) {
-//         let grid = frm.fields_dict['prastav_details'].grid;
-//         if(row.landholder_type === '1') {
-//             row.amount = '';
-//             grid.set_df_property('najarana_amount', 'read_only', 1);
-//         } else if(row.landholder_type === '2') {
-//             grid.set_df_property('najarana_amount', 'read_only', 0);
-//         }
-//     });
-//     frm.refresh_field('prastav_details'); 
-// }
