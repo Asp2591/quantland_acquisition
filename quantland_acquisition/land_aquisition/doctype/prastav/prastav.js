@@ -24,10 +24,7 @@ frappe.ui.form.on("Prastav", {
             frappe.model.set_value(row.doctype, row.name, 'village_name', frm.doc.village_name);
         });
         frm.refresh_field('prastav_details');
-    },
-    
-
-    
+    },   
 });
 
 frappe.ui.form.on("Prastav Details", {

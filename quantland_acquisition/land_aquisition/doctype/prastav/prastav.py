@@ -57,7 +57,7 @@ class Prastav(Document):
                 "well_pipeline": row.well_pipeline or "",
                 "deductible_amount": row.deductible_amount or "",
                 "landholder_type":row.landholder_type or "",
-                "najarana_amount":row.najarana_amount or "Not Applicable"
+                "najarana_amount":row.najarana_amount or ""
 
             }
 
