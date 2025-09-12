@@ -570,11 +570,6 @@
    "label": "Page Number"
   },
   {
-   "fieldname": "after_purchase_attach",
-   "fieldtype": "Attach",
-   "label": "After Purchase 7/12"
-  },
-  {
    "fieldname": "srno",
    "fieldtype": "Data",
    "label": "Sr.No"
@@ -615,13 +610,19 @@
   {
    "fieldname": "column_break_qjir",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.purchase_deed == 'Available'",
+   "fieldname": "after_purchase_attach",
+   "fieldtype": "Attach",
+   "label": "After Purchase 7/12"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-12 12:39:47.024443",
- "modified_by": "Administrator",
+ "modified": "2025-09-12 13:52:51.564393",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",

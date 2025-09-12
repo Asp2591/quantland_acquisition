@@ -34,16 +34,6 @@ frappe.ui.form.on('Gut Details', {
         append_stage_history(frm);
     },
   
-    onload: function(frm) {
-        frm.set_df_property("after_purchase_attach", "hidden", 1);
-    },
-    purchase_deed: function(frm) {
-        if(frm.doc.purchase_deed === "Not Available") {
-            frm.set_df_property("after_purchase_attach", "hidden", 1); 
-        } else {
-            frm.set_df_property("after_purchase_attach", "hidden", 0);
-        }
-    }
 });
 
 async function fetch_prastav_detail(frm) {

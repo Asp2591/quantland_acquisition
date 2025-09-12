@@ -54,22 +54,6 @@ frappe.ui.form.on("Prastav Details", {
 
     deductible_amount: amount_of_compensation_calc,
     total_renumeration: amount_of_compensation_calc,
-
-    landholder_type: function(frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
-        let grid_row = frm.fields_dict["prastav_details"].grid.grid_rows_by_docname[row.name];
-
-        if (row.landholder_type === "1") {
-            frappe.model.set_value(cdt, cdn, "najarana_amount", "");
-            grid_row.toggle_display("najarana_amount", false);
-            grid_row.set_read_only("najarana_amount", true);
-        } else if (row.landholder_type === "2") {
-            frappe.model.set_value(cdt, cdn, "najarana_amount", 0);
-            grid_row.toggle_display("najarana_amount", true);
-            grid_row.set_read_only("najarana_amount", false);
-        }
-    }
-
 });
 
 function calculate_area(frm, cdt, cdn) {
