@@ -23,7 +23,7 @@
   {
    "fieldname": "prakalp_id",
    "fieldtype": "Data",
-   "label": "Prakalp ID",
+   "label": "Prakalp ",
    "reqd": 1,
    "unique": 1
   },
@@ -96,7 +96,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-07 16:15:34.592525",
+ "modified": "2025-09-13 12:55:10.750577",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prakalp",
@@ -118,7 +118,9 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "prakalp_name",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "prakalp_name"
 }

@@ -14,6 +14,7 @@
   "status",
   "primary_details_section",
   "prastav_id",
+  "column_break_yuhf",
   "prastav_name",
   "prakalp_id",
   "prakalp_name",
@@ -56,13 +57,13 @@
    "fieldname": "divison_id",
    "fieldtype": "Link",
    "label": "Division ID",
-   "options": "Division",
-   "reqd": 1
+   "options": "Division"
   },
   {
    "fetch_from": "divison_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Division Name",
@@ -79,6 +80,7 @@
    "fetch_from": "yojana_id.yojana_name",
    "fieldname": "yojana_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Yojana Name",
@@ -99,6 +101,7 @@
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Subdivision Name",
@@ -126,6 +129,7 @@
    "fetch_from": "village_id.village_name",
    "fieldname": "village_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Village Name"
   },
   {
@@ -139,12 +143,14 @@
    "fetch_from": "prakalp_id.prakalp_name",
    "fieldname": "prakalp_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Prakalp Name"
   },
   {
    "fetch_from": "tehsil_id.tehsil_name",
    "fieldname": "tehsil_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Tehsil Name"
   },
   {
@@ -186,6 +192,7 @@
    "fetch_from": "district_id.district_name",
    "fieldname": "district_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "District Name"
   },
   {
@@ -207,12 +214,16 @@
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Active\nDeactive"
+  },
+  {
+   "fieldname": "column_break_yuhf",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-11 14:10:12.152631",
+ "modified": "2025-09-13 12:19:45.813363",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",
@@ -234,8 +245,10 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "prastav_name",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "prastav_name",
  "track_changes": 1
 }

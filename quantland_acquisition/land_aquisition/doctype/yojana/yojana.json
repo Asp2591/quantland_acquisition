@@ -63,7 +63,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-06 18:22:37.857906",
+ "modified": "2025-09-13 12:10:37.424625",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Yojana",
@@ -85,8 +85,10 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "yojana_name",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "yojana_name",
  "track_changes": 1
 }

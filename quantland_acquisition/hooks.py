@@ -248,10 +248,17 @@ app_include_css = [
     "/assets/quantland_acquisition/css/custom.css"
 ]
 
+app_include_js = [
+    "/assets/quantland_acquisition/js/custom.js"
+]
+
 web_include_css = [
     "/assets/quantland_acquisition/css/custom.css"
 ]
-# hooks.py
+
+web_include_js = [
+    "/assets/quantland_acquisition/js/custom.js"
+]
 
 fixtures = [
     

@@ -8,15 +8,20 @@
  "field_order": [
   "status",
   "section_break_anmy",
+  "prakalp_id",
+  "prakalp_name",
+  "prastav_id",
+  "prastav_name",
+  "column_break_fpsa",
   "village_id",
   "village_name",
-  "division_id",
-  "division_name",
+  "subdivision_id",
+  "subdivision_name",
   "column_break_xjhs",
   "tehsil_id",
   "tehsil_name",
-  "subdivision_id",
-  "subdivision_name",
+  "division_id",
+  "division_name",
   "column_break_qhzp",
   "district_id",
   "district_name",
@@ -25,8 +30,6 @@
   "column_break_hmxk",
   "state_id",
   "state_name",
-  "prastav_id",
-  "prastav_name",
   "gut_details_section",
   "column_break_csgw",
   "gut_number",
@@ -113,6 +116,7 @@
    "fetch_from": "village_id.village_name",
    "fieldname": "village_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Village Name",
    "read_only": 1
   },
@@ -133,6 +137,7 @@
    "fetch_from": "tehsil_id.tehsil_name",
    "fieldname": "tehsil_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Tehsil Name",
    "read_only": 1
   },
@@ -147,6 +152,7 @@
    "fetch_from": "district_id.district_name",
    "fieldname": "district_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "District Name",
    "read_only": 1
   },
@@ -161,6 +167,7 @@
    "fetch_from": "state_id.state_name",
    "fieldname": "state_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "State Name",
    "read_only": 1
   },
@@ -168,6 +175,7 @@
    "fetch_from": "prastav_id.prastav_name",
    "fieldname": "prastav_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_standard_filter": 1,
    "label": "Prastav Name",
    "read_only": 1
@@ -182,6 +190,7 @@
    "fetch_from": "subdivision_id.subdivision_name",
    "fieldname": "subdivision_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Subdivision Name",
@@ -197,6 +206,7 @@
    "fetch_from": "division_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Division Name",
@@ -212,6 +222,7 @@
    "fetch_from": "yojana_id.yojana_name",
    "fieldname": "yojana_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Yojana Name",
    "read_only": 1
   },
@@ -537,8 +548,9 @@
   },
   {
    "fieldname": "prastav_id",
-   "fieldtype": "Data",
-   "label": "Prastav ID"
+   "fieldtype": "Link",
+   "label": "Prastav ID",
+   "options": "Prastav"
   },
   {
    "fieldname": "column_break_zfex",
@@ -616,12 +628,28 @@
    "fieldname": "after_purchase_attach",
    "fieldtype": "Attach",
    "label": "After Purchase 7/12"
+  },
+  {
+   "fieldname": "prakalp_id",
+   "fieldtype": "Link",
+   "label": "Prakalp ID",
+   "options": "Prakalp"
+  },
+  {
+   "fieldname": "prakalp_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Prakalp Name"
+  },
+  {
+   "fieldname": "column_break_fpsa",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-12 13:52:51.564393",
+ "modified": "2025-09-13 14:37:42.581840",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
@@ -642,6 +670,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "gut_name",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

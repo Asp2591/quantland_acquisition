@@ -26,6 +26,7 @@ class Prastav(Document):
                 "village_name": village_name,
                 "village_id": village_id,
                 "prastav_name": prastav_name,
+                "prakalp_id":self.prakalp_id,
                 "subdivision_id": self.subdivision_id,
                 "division_id": self.divison_id,
                 "yojana_id": self.yojana_id,

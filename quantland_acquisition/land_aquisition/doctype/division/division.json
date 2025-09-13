@@ -79,7 +79,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-30 18:50:53.881764",
+ "modified": "2025-09-13 12:10:18.835543",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Division",
@@ -101,8 +101,10 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "division_name",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "division_name",
  "track_changes": 1
 }

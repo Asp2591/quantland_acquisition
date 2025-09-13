@@ -73,7 +73,8 @@ async function fetch_prastav_detail(frm) {
         others: d.others || "",
         well_pipeline: d.well_pipeline || "",
         deductible_amount: d.deductible_amount || "",
-        village_id: d.village_id
+        village_id: d.village_id,
+        prakalp_id:d.prakalp_id
     });
 }
 

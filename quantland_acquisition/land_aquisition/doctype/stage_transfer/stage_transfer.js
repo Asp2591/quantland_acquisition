@@ -27,7 +27,7 @@ frappe.ui.form.on('Stage Transfer', {
     frappe.db.get_value("Gut Details", frm.doc.gut_name, "current_stage")
         .then(r => {
             if (r && r.message) {
-                frm.set_value("new_stage", r.message.current_stage);
+                frm.set_value("current_stage", r.message.current_stage);
                 console.log("current_stage:", r.message.current_stage, "new_stage:", frm.doc.new_stage);
             }
         });

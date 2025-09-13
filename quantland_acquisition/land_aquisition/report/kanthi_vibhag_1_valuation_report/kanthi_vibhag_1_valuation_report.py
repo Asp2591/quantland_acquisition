@@ -50,14 +50,16 @@ def get_print_html(filters):
         {"label": _("मोबदला देय रक्कम"), "fieldname": "total_amount_of_compensation"},
         {"label": _("शेरा"), "fieldname": "remark"},
     ]
-
+    
     filter_labels = [
         {"fieldname": "village_id", "label": _("गाव")},
         {"fieldname": "tehsil_id", "label": _("तालुका")},
-        {"fieldname": "gut_number", "label": _("गट क्रमांक")},
+        {"fieldname": "gut_name", "label": _("गट")},
+        {"fieldname": "prakalp_id", "label": _("प्रकल्प")},
         {"fieldname": "aquisition_type", "label": _("संपादनाचा प्रकार")},
         {"fieldname": "date", "label": _("तारीख")},
     ]
+    
 
     html = """
 <html>
@@ -72,7 +74,7 @@ def get_print_html(filters):
         th, td { border: 1px solid #000; padding: 4px; text-align: center; vertical-align: top; }
         th { background-color: #f0f0f0; white-space: normal; word-wrap: break-word; }
         td { white-space: normal; word-wrap: break-word; }
-        .filters-inline { font-size: 13px; display: inline-flex; gap: 200px; flex-wrap: wrap; margin-bottom: 10px;margin-left: 10px; }
+        .filters-inline { font-size: 13px; display: inline-flex; gap: 40px; flex-wrap: wrap; margin-bottom: 10px;margin-left: 10px; }
         .filters-inline span { white-space: nowrap; }
         .filters-inline strong { margin-right: 5px; }
     </style>
@@ -89,6 +91,14 @@ def get_print_html(filters):
 
     for f in filter_labels:
         value = filters.get(f["fieldname"], "")
+        if f["fieldname"] in ["village_id", "tehsil_id", "prakalp_id"]:
+            if value:
+                if f["fieldname"] == "village_id":
+                    value = frappe.db.get_value("Village", value, "village_name") or value
+                elif f["fieldname"] == "tehsil_id":
+                    value = frappe.db.get_value("Tehsil", value, "tehsil_name") or value
+                elif f["fieldname"] == "prakalp_id":
+                    value = frappe.db.get_value("Prakalp", value, "prakalp_name") or value
         html += f"<span><strong>{f['label']}:</strong> {value}</span>"
 
     html += "</div>"
@@ -124,7 +134,9 @@ def get_print_html(filters):
 </body>
 </html>
 """
+
     return html
+
 
 
 def get_columns():
@@ -169,8 +181,7 @@ def get_columns():
 def get_data(filters):
     data = []
 
-    # Only include children of Active/Deactive parents based on filter
-    status_filter = filters.get("status") or "Active"  # default Active if not selected
+    status_filter = filters.get("status") or "Active"  
     conditions = "c.parentfield = 'prastav_details' AND p.status = %(status)s"
     values = {"status": status_filter}
 
@@ -179,6 +190,9 @@ def get_data(filters):
     if filters.get("village_id"):
         conditions += " AND c.village_id = %(village_id)s"
         values["village_id"] = filters["village_id"]
+    if filters.get("prakalp_id"):
+        conditions += " AND p.prakalp_id = %(prakalp_id)s"
+        values["prakalp_id"] = filters["prakalp_id"]
     if filters.get("tehsil_id"):
         conditions += " AND t.name = %(tehsil_id)s"
         values["tehsil_id"] = filters["tehsil_id"]
@@ -199,6 +213,7 @@ def get_data(filters):
         SELECT
             p.name AS parent_docname,
             p.prastav_name AS prastav_name,
+            p.prakalp_id AS prakalp_id,
             v.village_name,
             t.tehsil_name,
             d.district_name,
@@ -245,6 +260,7 @@ def get_data(filters):
         data.append({
             "parent_docname": r.parent_docname,
             "prastav_name": r.prastav_name,
+            "prakalp_name": r.prakalp_name,
             "village_name": r.village_name,
             "tehsil_name": r.tehsil_name,
             "district_name": r.district_name,
