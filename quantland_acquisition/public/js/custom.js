@@ -1,11 +1,11 @@
-// console.log("Custom login JS loaded!");
-
+// console.log("Custom navbar buttons loaded!");
 
 (function() {
     const observer = new MutationObserver((mutations, obs) => {
         const nav = document.querySelector(".navbar.navbar-expand");
         if (nav && !document.querySelector("#home-custom-btn")) {
             let firstChild = nav.firstElementChild;
+
             const btn = document.createElement("button");
             btn.id = "home-custom-btn";
             btn.className = "btn btn-primary btn-sm";
