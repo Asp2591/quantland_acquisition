@@ -5,8 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 class Prastav(Document):
-    
-    def after_insert(self):
+    def before_save(self):
         self.create_gut_doc()
 
     def create_gut_doc(self):
@@ -31,7 +30,6 @@ class Prastav(Document):
                 "subdivision_id": self.subdivision_id,
                 "division_id": self.divison_id,
                 "yojana_id": self.yojana_id,
-                "prastav_id": self.name, 
                 "total_area": row.total_area or 0,
                 "affected_area": row.affected_area or 0,
                 "waste_area": row.waste_area or 0,
@@ -58,17 +56,19 @@ class Prastav(Document):
                 "others": row.others or "",
                 "well_pipeline": row.well_pipeline or "",
                 "deductible_amount": row.deductible_amount or "",
-                "landholder_type": row.landholder_type or "",
-                "najarana_amount": row.najarana_amount or ""
-            }
+                "landholder_type":row.landholder_type or "",
+                "najarana_amount":row.najarana_amount or ""
 
-            if not frappe.db.exists("Gut Details", gut_name):
+            }
+            if not frappe.db.exists("Gut Details", {"gut_name": gut_name}):
                 doc = frappe.new_doc("Gut Details")
                 doc.update(doc_values)
                 doc.insert()
+                frappe.db.set_value("Gut Details" , doc.name , 'prastav_id' , self.name)
                 frappe.msgprint(f"नवीन गट तपशील तयार झाला: {gut_name}") 
+
             else:
-                doc = frappe.get_doc("Gut Details", gut_name)
+                doc = frappe.get_doc("Gut Details", {"gut_name": gut_name})
                 doc.update(doc_values)
                 doc.save()
-                frappe.msgprint(f"गट तपशील अपडेटेड: {gut_name}")
+                frappe.msgprint(f"गट तपशील अपडेटेड: {gut_name}") 

@@ -70,6 +70,7 @@
    "fetch_from": "village_id.village_name",
    "fieldname": "village_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_standard_filter": 1,
    "label": "Village Name",
    "read_only": 1
@@ -81,7 +82,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Total Area",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "columns": 1,
@@ -89,7 +90,7 @@
    "fieldtype": "Float",
    "in_standard_filter": 1,
    "label": "Affected Area",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "columns": 2,
@@ -116,7 +117,7 @@
    "fieldname": "cultivated_area",
    "fieldtype": "Float",
    "label": "Cultivated Area",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "columns": 1,
@@ -124,7 +125,7 @@
    "fieldtype": "Float",
    "in_standard_filter": 1,
    "label": "Hectare Size",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "fieldname": "group_number",
@@ -200,7 +201,7 @@
    "fieldtype": "Float",
    "in_standard_filter": 1,
    "label": "Size on 7/12",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "fieldname": "trees",
@@ -308,7 +309,7 @@
    "fieldname": "waste_area",
    "fieldtype": "Float",
    "label": "Uncultivated Waste Area",
-   "precision": "0"
+   "precision": "2"
   },
   {
    "fieldname": "per_hectare_rate_by_district_level_committee",
@@ -319,7 +320,8 @@
   {
    "fieldname": "value_of_acquired_land",
    "fieldtype": "Float",
-   "label": "Market Rate of Acquired Land"
+   "label": "Market Rate of Acquired Land",
+   "precision": "0"
   },
   {
    "fieldname": "land_price_by_factor",
@@ -358,7 +360,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-12 13:29:13.193657",
+ "modified": "2025-09-17 17:42:32.117436",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",

@@ -15,16 +15,7 @@ frappe.ui.form.on("Prastav", {
 
     prastav_id: function(frm) {
         fetch_prastav_details(frm);
-    },
-
-    village_name: function(frm) {
-        if (!frm.doc.village_name) return;
-
-        frm.doc.prastav_details.forEach(row => {
-            frappe.model.set_value(row.doctype, row.name, 'village_name', frm.doc.village_name);
-        });
-        frm.refresh_field('prastav_details');
-    },   
+    },  
 });
 
 frappe.ui.form.on("Prastav Details", {
@@ -51,6 +42,13 @@ frappe.ui.form.on("Prastav Details", {
 
     deductible_amount: amount_of_compensation_calc,
     total_renumeration: amount_of_compensation_calc,
+
+    prastav_details_add: function(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        if (frm.doc.village_id) {
+            frappe.model.set_value(cdt,cdn, {'village_id':frm.doc.village_id});
+        }
+    },
 });
 
 function calculate_area(frm, cdt, cdn) {

@@ -36,12 +36,6 @@
    "reqd": 1
   },
   {
-   "fetch_from": "subdivision_id.subdivision_id",
-   "fieldname": "division_id",
-   "fieldtype": "Int",
-   "label": "Division ID"
-  },
-  {
    "fetch_from": "subdivision_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
@@ -91,12 +85,19 @@
    "fieldtype": "Link",
    "label": "Subdivision ID",
    "options": "Subdivision"
+  },
+  {
+   "fetch_from": "subdivision_id.division_id",
+   "fieldname": "division_id",
+   "fieldtype": "Link",
+   "label": "Division ID",
+   "options": "Division"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-13 12:55:10.750577",
+ "modified": "2025-09-17 17:33:46.668731",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prakalp",

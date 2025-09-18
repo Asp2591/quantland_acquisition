@@ -53,13 +53,6 @@
    "reqd": 1
   },
   {
-   "fetch_from": "subdivision_id.division_id",
-   "fieldname": "divison_id",
-   "fieldtype": "Link",
-   "label": "Division ID",
-   "options": "Division"
-  },
-  {
    "fetch_from": "divison_id.division_name",
    "fieldname": "division_name",
    "fieldtype": "Data",
@@ -70,7 +63,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "divison_id.yojana_id",
+   "fetch_from": "prakalp_id.yojana_id",
    "fieldname": "yojana_id",
    "fieldtype": "Link",
    "label": "Yojana ID",
@@ -218,12 +211,19 @@
   {
    "fieldname": "column_break_yuhf",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "prakalp_id.division_id",
+   "fieldname": "divison_id",
+   "fieldtype": "Link",
+   "label": "Divison ID",
+   "options": "Division"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-17 14:03:08.072079",
+ "modified": "2025-09-17 17:39:30.016543",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",
