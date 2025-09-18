@@ -9,7 +9,7 @@
 }
 
 [data-page-route="Workspaces"] .ellipsis {
-    color:#eca814;
+    color:#8ae286;
     font-size:15px;
 }
 
@@ -69,8 +69,8 @@
 
 [data-page-route="Workspaces"] .workspace-footer button {
     background: #0b0e0d8a !important;
-    color: #eca814 !important;
-    border: 2px solid #131518 !important;
+    color: #000000 !important;
+    border: 2px solid #1d2531 !important;
     padding: 6px 16px !important;
     border-radius: 6px !important;
     font-weight: 500 !important;
@@ -87,11 +87,13 @@
 .widget.links-widget-box {
     flex: 0 0 300px;
     padding: 20px !important;
-    border-radius: 12px !important;
+        border: 2px solid #131518 !important;
+
     color: #ffffff !important;
     background: #1717178a !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgb(19 17 17) !important;
+    transition: all 0.3s 
+ease-in-out;
 }
 
 .widget.links-widget-box .link-text {
@@ -195,7 +197,7 @@ body.login {
     flex-direction: column;
     gap: 4px;
     overflow: hidden;
-    background-color: #7b8885;
+    background-color: #94b0da;
     border-right: 2px solid #090a0a;
 }
 
