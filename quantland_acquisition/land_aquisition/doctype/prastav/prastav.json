@@ -116,7 +116,8 @@
    "fieldname": "village_id",
    "fieldtype": "Link",
    "label": "Village ID",
-   "options": "Village"
+   "options": "Village",
+   "reqd": 1
   },
   {
    "fetch_from": "village_id.village_name",
@@ -223,7 +224,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-17 17:39:30.016543",
+ "modified": "2025-09-18 13:05:28.288076",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav",

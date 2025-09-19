@@ -135,8 +135,9 @@
   },
   {
    "fieldname": "factor",
-   "fieldtype": "Int",
-   "label": "Factor"
+   "fieldtype": "Float",
+   "label": "Factor",
+   "precision": "1"
   },
   {
    "fieldname": "grand_total",
@@ -360,7 +361,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-17 17:42:32.117436",
+ "modified": "2025-09-18 13:08:25.919776",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Prastav Details",
