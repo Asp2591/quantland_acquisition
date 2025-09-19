@@ -27,12 +27,13 @@ frappe.ui.form.on('Stage Transfer', {
     gut_name: function(frm) {
     if (!frm.doc.gut_name) return;
 
-    frappe.db.get_value("Gut Details", frm.doc.gut_name, ["current_stage", "srno", "stage_date"])
+    frappe.db.get_value("Gut Details", frm.doc.gut_name, ["current_stage", "prastav_id","srno", "stage_date"])
         .then(r => {
             if (r && r.message) {
                 frm.set_value("current_stage", r.message.current_stage);
                 frm.set_value("srno", r.message.srno);
                 frm.set_value("date", r.message.stage_date);
+                frm.set_value("prastav_id", r.message.prastav_id);
                 console.log(r.message,"current_stage:", r.message.current_stage, 
                             "srnno:", r.message.srno, 
                             "date:", r.message.stage_date, 

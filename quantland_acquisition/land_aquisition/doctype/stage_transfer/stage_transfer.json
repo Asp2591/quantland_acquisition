@@ -6,9 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "gut_name",
   "prastav_id",
   "prastav_name",
-  "gut_name",
   "column_break_sluf",
   "division_id",
   "division_name",
@@ -48,7 +48,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "prastav_id.divison_id",
+   "fetch_from": "gut_name.division_id",
    "fieldname": "division_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -69,7 +69,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "division_id.yojana_id",
+   "fetch_from": "gut_name.yojana_id",
    "fieldname": "yojana_id",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -144,7 +144,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-13 13:04:35.228897",
+ "modified": "2025-09-19 13:10:02.838449",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Stage Transfer",
