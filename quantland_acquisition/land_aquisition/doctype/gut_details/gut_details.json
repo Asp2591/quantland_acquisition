@@ -352,12 +352,6 @@
    "precision": "2"
   },
   {
-   "fieldname": "size_on_paper",
-   "fieldtype": "Float",
-   "label": "Size on 7/12",
-   "precision": "2"
-  },
-  {
    "fieldname": "column_break_azhg",
    "fieldtype": "Column Break"
   },
@@ -681,13 +675,18 @@
    "fieldtype": "Float",
    "label": "R Size",
    "precision": "3"
+  },
+  {
+   "fieldname": "size_on_paper",
+   "fieldtype": "Data",
+   "label": "Size on 7/12"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-01 16:22:39.958212",
- "modified_by": "Administrator",
+ "modified": "2025-10-01 17:00:59.526961",
+ "modified_by": "atharvapatkar@erpdata.in",
  "module": "Land Aquisition",
  "name": "Gut Details",
  "naming_rule": "By fieldname",
