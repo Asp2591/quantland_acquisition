@@ -40,18 +40,22 @@
   "column_break_inpu",
   "current_stage",
   "gut_name",
+  "workstation",
   "column_break_zfex",
   "stage_date",
+  "cheque_number",
   "land_details_section",
   "landholder",
   "aquisition_type",
   "cultivated_area",
   "affected_area",
+  "processed_area",
   "column_break_azhg",
   "record",
   "land_type",
   "waste_area",
   "size_on_paper",
+  "r_size",
   "column_break_pgql",
   "attachment",
   "group_number",
@@ -59,11 +63,12 @@
   "hectare_size",
   "712_section",
   "per_hectare_rate_by_district_level_committee",
+  "total_market_value",
   "column_break_zzuj",
   "value_of_acquired_land",
+  "amount_to_be_collected",
   "column_break_yuol",
   "factor",
-  "column_break_fgrj",
   "land_price_by_factor",
   "section_break_dkyr",
   "houses",
@@ -93,7 +98,7 @@
   "column_break_wdsb",
   "payment_remarks",
   "column_break_cxcu",
-  "date",
+  "dast_number",
   "column_break_buzg",
   "purchase_deed",
   "column_break_qjir",
@@ -429,10 +434,6 @@
    "label": "Total Renumeration Amount"
   },
   {
-   "fieldname": "column_break_fgrj",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "land_price_by_factor",
    "fieldtype": "Currency",
    "label": "Land Price by Factor",
@@ -559,11 +560,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
    "fieldname": "stage_date",
    "fieldtype": "Date",
    "label": "Stage Date"
@@ -646,12 +642,51 @@
   {
    "fieldname": "column_break_fpsa",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "processed_area",
+   "fieldtype": "Float",
+   "label": "Processed Area",
+   "precision": "2"
+  },
+  {
+   "fieldname": "cheque_number",
+   "fieldtype": "Data",
+   "label": "Cheque Number"
+  },
+  {
+   "fieldname": "dast_number",
+   "fieldtype": "Data",
+   "label": "Dast Number"
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Data",
+   "label": "Workstation"
+  },
+  {
+   "fieldname": "total_market_value",
+   "fieldtype": "Float",
+   "label": "Total Market Value",
+   "precision": "3"
+  },
+  {
+   "fieldname": "amount_to_be_collected",
+   "fieldtype": "Float",
+   "label": "Amount to be Collected",
+   "precision": "2"
+  },
+  {
+   "fieldname": "r_size",
+   "fieldtype": "Float",
+   "label": "R Size",
+   "precision": "3"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-18 13:10:53.197616",
+ "modified": "2025-10-01 16:22:39.958212",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Gut Details",
