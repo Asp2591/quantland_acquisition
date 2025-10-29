@@ -18,7 +18,7 @@ def get_columns():
         {"label": "मोबदला रक्कम निवाडा रक्कम", "fieldname": "payment_amount", "fieldtype": "Int", "width": 200},
         {"label": "मोबदला मंजूर संदर्भ", "fieldname": "payment_remarks", "fieldtype": "Data", "width": 180},
         {"label": "मोबदला मंजूर तारीख", "fieldname": "date", "fieldtype": "Date", "width": 120},
-        {"label": "लाभधारकला सूचना दिनांकत्र", "fieldname": "purchase_deed", "fieldtype": "Data", "width": 150},
+        {"label": "खरेदी करार", "fieldname": "purchase_deed", "fieldtype": "Data", "width": 150},
         {"label": "दस्त दिनांक", "fieldname": "purchase_deed_date", "fieldtype": "Date", "width": 150},
         {"label": "७/१२ नोंद झाली होय/नाही", "fieldname": "record", "fieldtype": "Select", "options": "Yes\nNo", "width": 200},
         {"label": "संलग्नक उपलब्ध आहे का", "fieldname": "attachment", "fieldtype": "Attach", "width": 150},

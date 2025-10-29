@@ -8,7 +8,6 @@ def execute(filters=None):
     columns = get_columns()
     data = get_data(filters)
     return columns, data
-
 @frappe.whitelist()
 def get_print_html(filters):
     import json
@@ -108,10 +107,27 @@ def get_print_html(filters):
         html += f"<th>{col['label']}</th>"
     html += "</tr>"
 
+    numeric_fields = [
+        "cultivated_area", "waste_area", "total_area", "size_on_paper", "hectare_size",
+        "per_hectare_rate_by_district_level_committee", "affected_area", "value_of_acquired_land",
+        "factor", "land_price_by_factor", "trees", "well_pipeline", "houses", "others",
+        "property_valuation_direct_purchase", "factor_purchase_total", "relief_amt", "grand_total",
+        "additional_amount_25_by_govt", "total_renumeration", "deductible_amount", "total_amount_of_compensation"
+    ]
+
     for row in data:
         html += "<tr>"
         for col in print_columns:
-            html += f"<td>{row.get(col['fieldname'], '')}</td>"
+            value = row.get(col['fieldname'], "")
+            if col["fieldname"] in numeric_fields:
+                try:
+                    value = float(value)
+                    formatted_value = f"{value:,.2f}"
+                    html += f"<td style='text-align: right;'>{formatted_value}</td>"
+                except (TypeError, ValueError):
+                    html += f"<td style='text-align: right;'>{value}</td>"
+            else:
+                html += f"<td>{value}</td>"
         html += "</tr>"
 
     html += """
@@ -139,13 +155,14 @@ def get_print_html(filters):
 
 
 
+
 def get_columns():
     return [
         {"label": _("प्रस्ताव आयडी"), "fieldname": "parent_docname", "fieldtype": "Link", "options": "Prastav"},
         {"label": _("गावाचे नाव"), "fieldname": "village_name", "fieldtype": "Data"},
         {"label": _("तहसीलचे नाव"), "fieldname": "tehsil_name", "fieldtype": "Data"},
         {"label": _("जिल्ह्याचे नाव"), "fieldname": "district_name", "fieldtype": "Data"},
-        {"label": _("जमिनदाराचे नाव"), "fieldname": "landholder", "fieldtype": "Data"},
+        {"label": _("भोगवटदाराचे नाव"), "fieldname": "landholder", "fieldtype": "Data"},
         {"label": _("गट क्रमांक"), "fieldname": "gut_number", "fieldtype": "Int"},
         {"label": _("गट नाव"), "fieldname": "gut_name", "fieldtype": "Link","options":"Gut Details"},
         {"label": _("ग्रुप क्रमांक"), "fieldname": "group_number", "fieldtype": "Data"},
@@ -155,8 +172,9 @@ def get_columns():
         {"label": _("शेतीसाठी क्षेत्रफळ"), "fieldname": "cultivated_area", "fieldtype": "Int"},
         {"label": _("पोट खराब"), "fieldname": "waste_area", "fieldtype": "Int"},
         {"label": _("संपादन करावयाचे क्षेत्र"), "fieldname": "affected_area", "fieldtype": "Int"},
-        {"label": _("७/१२ नुसार आकार"), "fieldname": "size_on_paper", "fieldtype": "Data"},
+        {"label": _("७/१२ नुसार आकार"), "fieldname": "size_on_paper", "fieldtype": "Float","precision":3},
         {"label": _("हेक्टेअर आकार"), "fieldname": "hectare_size", "fieldtype": "Int"},
+        {"label": _("आर द्वारे आकार"), "fieldname": "hectare_size", "fieldtype": "Int"},
         {"label": _("जमिनीची प्रतवारी"), "fieldname": "land_type", "fieldtype": "Data"},
         {"label": _("जिल्हा स्तर समितीद्वारे हेक्टेअर दर"), "fieldname": "per_hectare_rate_by_district_level_committee", "fieldtype": "Int"},
         {"label": _("संपादित जमिनीचे मूल्य"), "fieldname": "value_of_acquired_land", "fieldtype": "Int"},
@@ -174,7 +192,7 @@ def get_columns():
         {"label": _("एकूण मोबदला रक्कम"), "fieldname": "total_renumeration", "fieldtype": "Int"},
         {"label": _("वजावट रक्कम"), "fieldname": "deductible_amount", "fieldtype": "Int"},
         {"label": _("मोबदला देय रक्कम"), "fieldname": "total_amount_of_compensation", "fieldtype": "Int"},
-        {"label": _("तारीख"), "fieldname": "date", "fieldtype": "Date"},
+        {"label": _("निवाडा दिनांक"), "fieldname": "date", "fieldtype": "Date"},
         {"label": _("शेरा"), "fieldname": "remark", "fieldtype": "Text"},
     ]
 
