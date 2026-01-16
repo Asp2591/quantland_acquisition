@@ -125,7 +125,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0930\u093e\u091c\u094d\u092f",
+   "label": "State",
    "link_count": 0,
    "link_to": "State",
    "link_type": "DocType",
@@ -135,7 +135,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u092a\u094d\u0930\u0926\u0947\u0936",
+   "label": "Region",
    "link_count": 0,
    "link_to": "Region",
    "link_type": "DocType",
@@ -145,7 +145,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0938\u0930\u094d\u0915\u0932",
+   "label": "Circle",
    "link_count": 0,
    "link_to": "Circle",
    "link_type": "DocType",
@@ -155,7 +155,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u091c\u093f\u0932\u094d\u0939\u093e",
+   "label": "District",
    "link_count": 0,
    "link_to": "District",
    "link_type": "DocType",
@@ -165,7 +165,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0924\u093e\u0932\u0941\u0915\u093e",
+   "label": "Tehsil",
    "link_count": 0,
    "link_to": "Tehsil",
    "link_type": "DocType",
@@ -175,7 +175,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0917\u093e\u0935",
+   "label": "Village",
    "link_count": 0,
    "link_to": "Village",
    "link_type": "DocType",
@@ -185,7 +185,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u092f\u094b\u091c\u0928\u093e",
+   "label": "Yojana",
    "link_count": 0,
    "link_to": "Yojana",
    "link_type": "DocType",
@@ -195,7 +195,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0935\u093f\u092d\u093e\u0917",
+   "label": "Division",
    "link_count": 0,
    "link_to": "Division",
    "link_type": "DocType",
@@ -205,7 +205,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0909\u092a\u0935\u093f\u092d\u093e\u0917",
+   "label": "Subdivision",
    "link_count": 0,
    "link_to": "Subdivision",
    "link_type": "DocType",
@@ -215,7 +215,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u091f\u092a\u094d\u092a\u0947",
+   "label": "Stage",
    "link_count": 0,
    "link_to": "Stage",
    "link_type": "DocType",
@@ -225,7 +225,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u092a\u093e\u0923\u094d\u092f\u093e\u091a\u093e \u092a\u094d\u0930\u0915\u093e\u0930",
+   "label": "Water Resources",
    "link_count": 0,
    "link_to": "Water Resources",
    "link_type": "DocType",
@@ -243,7 +243,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-09-16 10:52:48.856350",
+ "modified": "2026-01-16 17:14:59.106600",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "Jalsampada",

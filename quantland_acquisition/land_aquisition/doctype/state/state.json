@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:state_id",
  "creation": "2025-08-23 18:17:00.714343",
@@ -36,7 +37,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-13 12:09:30.673628",
+ "modified": "2026-01-02 10:30:25.535205",
  "modified_by": "Administrator",
  "module": "Land Aquisition",
  "name": "State",

@@ -11,7 +11,7 @@
             btn.className = "btn btn-primary btn-sm";
             btn.style.marginRight = "10px";
             btn.style.marginLeft = "10px";
-            btn.innerText = frappe._("Land Acquisition Workspace");
+            btn.innerText = frappe._("Land Acquisition");
 
             btn.addEventListener("click", () => {
                 window.location.href = "/app/jalsampada";
